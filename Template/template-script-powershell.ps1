@@ -11,4 +11,8 @@
 # Prerequisites
 ## Install PnP.PowerShell and add yourself as admin of the SharePoint site
 
+# Variables
+$ClientId = "<CLIENT_ID_APPLICATION>"
+$TenantID = "<TENANT_ID>"
+
 # Script
