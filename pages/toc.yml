@@ -1,0 +1,7 @@
+- name: General Documentation
+  href: general/
+  topicHref: general/index.md
+- name: PowerShell
+  href: powershell/
+- name: Console Apps
+  href: console/

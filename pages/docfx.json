@@ -3,30 +3,30 @@
     "content": [
       {
         "files": [
-		  "PowerShell/**/**.md",
-		  "PowerShell/**/toc.yml",
-		  "PowerShell/**.md",
-		  "PowerShell/toc.yml",
+		  "powershell/**/**.md",
+		  "powershell/**/toc.yml",
+		  "powershell/**.md",
+		  "powershell/toc.yml",
 		  "toc.yml",
 		  "*.md"
 		]
       },
 	  {
 		"files": [
-		  "Console Apps/**/**.md",
-		  "Console Apps/**/toc.yml",
-		  "Console Apps/**.md",
-		  "Console Apps/toc.yml",
+		  "console/**/**.md",
+		  "console/**/toc.yml",
+		  "console/**.md",
+		  "console/toc.yml",
 		  "toc.yml",
 		  "*.md"
 		]
 	  },
 	  {
 		"files": [
-		  "General Documentation/**/**.md",
-		  "General Documentation/**/toc.yml",
-		  "General Documentation/**.md",
-		  "General Documentation/toc.yml",
+		  "general/**/**.md",
+		  "general/**/toc.yml",
+		  "general/**.md",
+		  "general/toc.yml",
 		  "toc.yml",
 		  "*.md"
 		]
@@ -44,9 +44,6 @@
     ],
     "overwrite": [
       {
-        "files": [
-          "apidoc/**.md"
-        ],
         "exclude": [
           "obj/**",
           "_site/**"
