@@ -1,0 +1,101 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/runner/work/dw-script-lib/dw-script-lib/pages",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "console/App1.md",
+      "output": {
+        ".html": {
+          "relative_path": "console/App1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "console/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "console/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "general/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "general/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "general/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "general/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "powershell/Add-PnPField.md",
+      "output": {
+        ".html": {
+          "relative_path": "powershell/Add-PnPField.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "powershell/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "powershell/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
