@@ -13,20 +13,50 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "console/App1.md",
+      "source_relative_path": "../Console Apps/App1/App1.md",
       "output": {
         ".html": {
-          "relative_path": "console/App1.html"
+          "relative_path": "Console Apps/App1/App1.html"
         }
       },
       "version": ""
     },
     {
       "type": "Toc",
-      "source_relative_path": "console/toc.yml",
+      "source_relative_path": "../Console Apps/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "console/toc.html"
+          "relative_path": "Console Apps/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../PowerShell/Add-PnPField/Add-PnPField.md",
+      "output": {
+        ".html": {
+          "relative_path": "PowerShell/Add-PnPField/Add-PnPField.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "../PowerShell/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "PowerShell/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
         }
       },
       "version": ""
@@ -97,26 +127,6 @@
       "output": {
         "resource": {
           "relative_path": "logo.svg"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "powershell/Add-PnPField.md",
-      "output": {
-        ".html": {
-          "relative_path": "powershell/Add-PnPField.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "powershell/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "powershell/toc.html"
         }
       },
       "version": ""
