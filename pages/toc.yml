@@ -2,6 +2,6 @@
   href: general/
   topicHref: general/index.md
 - name: PowerShell
-  href: powershell/
+  href: ../PowerShell/
 - name: Console Apps
-  href: console/
+  href: ../Console Apps/

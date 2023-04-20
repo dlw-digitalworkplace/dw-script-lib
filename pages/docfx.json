@@ -3,23 +3,25 @@
     "content": [
       {
         "files": [
-		  "powershell/**/**.md",
-		  "powershell/**/toc.yml",
-		  "powershell/**.md",
-		  "powershell/toc.yml",
+		  "PowerShell/**/**.md",
+		  "PowerShell/**/toc.yml",
+		  "PowerShell/**.md",
+		  "PowerShell/toc.yml",
 		  "toc.yml",
 		  "*.md"
-		]
+		],
+		"src": ".."
       },
 	  {
 		"files": [
-		  "console/**/**.md",
-		  "console/**/toc.yml",
-		  "console/**.md",
-		  "console/toc.yml",
+		  "Console Apps/**/**.md",
+		  "Console Apps/**/toc.yml",
+		  "Console Apps/**.md",
+		  "Console Apps/toc.yml",
 		  "toc.yml",
 		  "*.md"
-		]
+		],
+		"src": ".."
 	  },
 	  {
 		"files": [
