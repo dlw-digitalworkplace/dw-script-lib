@@ -1,0 +1,20 @@
+.navbar {
+	background-color: #c42828;
+}
+
+.navbar li a {
+	color: #fff !important;
+}
+
+.navbar li a:hover {
+	color: #fff !important;
+}
+
+.navbar .active {
+	background-color: #ef463c !important;
+	color: #fff !important;
+}
+
+.navbar img {
+	width: 150px;
+}

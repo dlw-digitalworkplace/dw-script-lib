@@ -38,7 +38,9 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/**",
+		  "logo.svg",
+		  "favicon.ico"
         ]
       }
     ],
@@ -54,7 +56,8 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default",
+	  "template"
     ],
     "postProcessors": [],
 	"markdownEngineName": "markdig",
@@ -69,7 +72,9 @@
 	  },
 	  "_description": "This library will give you explanations on handy scripts created by your colleagues.",
 	  "_enableNewTab": true,
-	  "_enableSearch": true
+	  "_enableSearch": true,
+	  "_appLogoPath": "images/dlw-logo.jpg",
+	  "_appFaviconPath": "images/favicon.ico"
 	}
   }
 }
