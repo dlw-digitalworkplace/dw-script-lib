@@ -18,3 +18,11 @@
 .navbar img {
 	width: 150px;
 }
+
+.subnav {
+	background-color: #fff !important;
+}
+
+.subnav li a {
+	color: #000 !important;
+}
