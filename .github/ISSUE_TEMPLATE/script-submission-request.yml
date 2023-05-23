@@ -1,8 +1,9 @@
-name: Script Submission Request
-about: Use this template to create a new script submission request
-title: "[Submission Request]: "
-labels: ["New Script"]
-assignees: ""
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug", "triage"]
+assignees:
+  - octocat
 body:
   - type: markdown
     attributes:
@@ -50,7 +51,6 @@ body:
     attributes:
       label: Relevant log output
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
   - type: checkboxes
     id: terms
     attributes:
