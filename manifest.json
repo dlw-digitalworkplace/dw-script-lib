@@ -123,6 +123,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/issue-template.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/issue-template.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/search.png",
       "output": {
         "resource": {
