@@ -1,2 +1,4 @@
 - name: Introduction
   href: index.md
+- name: How to submit a script
+  href: submission-guidelines.md

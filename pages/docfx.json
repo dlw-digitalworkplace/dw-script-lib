@@ -3,46 +3,46 @@
     "content": [
       {
         "files": [
-		  "PowerShell/**/**.md",
-		  "PowerShell/**/toc.yml",
-		  "PowerShell/**.md",
-		  "PowerShell/toc.yml",
-		  "toc.yml",
-		  "*.md"
-		],
-		"src": ".."
+          "PowerShell/**/**.md",
+          "PowerShell/**/toc.yml",
+          "PowerShell/**.md",
+          "PowerShell/toc.yml",
+          "toc.yml",
+          "*.md"
+        ],
+        "src": ".."
       },
-	  {
-		"files": [
-		  "Console Apps/**/**.md",
-		  "Console Apps/**/toc.yml",
-		  "Console Apps/**.md",
-		  "Console Apps/toc.yml",
-		  "toc.yml",
-		  "*.md"
-		],
-		"src": ".."
-	  },
-	  {
-		"files": [
-		  "general/**/**.md",
-		  "general/**/toc.yml",
-		  "general/**.md",
-		  "general/toc.yml",
-		  "toc.yml",
-		  "*.md"
-		]
-	  },
-	  {
-		"files": "*.{md,yml}"
-	  }
+      {
+        "files": [
+          "ConsoleApps/**/**.md",
+          "ConsoleApps/**/toc.yml",
+          "ConsoleApps/**.md",
+          "ConsoleApps/toc.yml",
+          "toc.yml",
+          "*.md"
+        ],
+        "src": ".."
+      },
+      {
+        "files": [
+          "general/**/**.md",
+          "general/**/toc.yml",
+          "general/**.md",
+          "general/toc.yml",
+          "toc.yml",
+          "*.md"
+        ]
+      },
+      {
+        "files": "*.{md,yml}"
+      }
     ],
     "resource": [
       {
         "files": [
           "images/**",
-		  "logo.svg",
-		  "favicon.ico"
+          "logo.svg",
+          "favicon.ico"
         ]
       }
     ],
@@ -59,24 +59,21 @@
     "fileMetadataFiles": [],
     "template": [
       "default",
-	  "template"
+      "template"
     ],
     "postProcessors": [],
-	"markdownEngineName": "markdig",
+    "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,
     "disableGitFeatures": false,
-	"globalMetadata": {
-	  "_appTitle": "DW Scripts Lib",
-	  "_gitContribute": {
-	    "repo": "https://github.com/dlw-digitalworkplace/dw-script-lib",
-		"branch": "main"
-	  },
-	  "_description": "This library will give you explanations on handy scripts created by your colleagues.",
-	  "_enableNewTab": true,
-	  "_enableSearch": true,
-	  "_appLogoPath": "images/dlw-logo.jpg",
-	  "_appFaviconPath": "images/favicon.ico"
-	}
+    "globalMetadata": {
+      "_appTitle": "DW Scripts Lib",
+      "_description": "This library will give you explanations on handy scripts created by your colleagues.",
+      "_enableNewTab": true,
+      "_enableSearch": true,
+      "_disableContribution": true,
+      "_appLogoPath": "images/dlw-logo.jpg",
+      "_appFaviconPath": "images/favicon.ico"
+    }
   }
 }
