@@ -1,4 +1,4 @@
-﻿# Naming convention (can be removed if applied): template-script-powershell.ps1
+# Naming convention (can be removed if applied): template-script-powershell.ps1
 
 # Description
 ## This is a template script that can be used for documentation.
