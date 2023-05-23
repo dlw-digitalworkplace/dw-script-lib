@@ -1,14 +1,13 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+name: Script Submission Request
+description: Use this template for submitting a script to the repository.
+title: "[Script Submission]: "
+labels: ["New Script"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for taking the time to a new script to the library!
+        Once filled out, someonde from the team will review your submission and get back to you as soon as possible.
   - type: input
     id: contact
     attributes:
@@ -18,44 +17,24 @@ body:
     validations:
       required: false
   - type: textarea
-    id: what-happened
+    id: description
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: Description
+      description: Give us a description (details) about what the script will do?
     validations:
       required: true
   - type: dropdown
-    id: version
+    id: type
     attributes:
-      label: Version
-      description: What version of our software are you running?
+      label: Type
+      description: What type of script (PowerShell or Console App)?
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+        - PowerShell
+        - Console App
     validations:
       required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
   - type: textarea
-    id: logs
+    id: tags
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: Add some tags (keywords) to help others find your script (separate by comma)
+      description: Please add some keywords (SharePoint, MS Teams, Azure AD, ...).
