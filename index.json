@@ -1,18 +1,23 @@
 {
-  "Console Apps/App1/App1.html": {
-    "href": "Console Apps/App1/App1.html",
+  "ConsoleApps/App1/App1.html": {
+    "href": "ConsoleApps/App1/App1.html",
     "title": "PLACEHOLDER | DW Scripts Lib",
     "keywords": "PLACEHOLDER TODO: Add .NET projects to the src folder and run docfx to generate REAL API Documentation!"
   },
   "general/index.html": {
     "href": "general/index.html",
-    "title": "Add your introductions here! | DW Scripts Lib",
-    "keywords": "Add your introductions here!"
+    "title": "Introduction | DW Scripts Lib",
+    "keywords": "Introduction Welcome to the dw-script-lib. This page will give you all relevant information regarding this library. Check out the navigation to the left to find your topic"
+  },
+  "general/submission-guidelines.html": {
+    "href": "general/submission-guidelines.html",
+    "title": "Submission guidelines | DW Scripts Lib",
+    "keywords": "Submission guidelines Do you have a possible interesting and reusable script, then this page is for you. There are two options to submit: Using a Pull Request (technical) Using a GitHub Issue Submitting a Pull Request The first step when submitting a new script, is to pull the code to your local machine (git clone https://github.com/dlw-digitalworkplace/dw-script-lib.git). Create a new branch that starts from the main branch and use the following naming convention: submission/[name-of-script] Create a new folder in the PowerShell or ConsoleApps folder (depending on what you are submitting). Give the folder a clear name (e.g. AddUserToGroup, UpdateSharePointListColumn, ...) Copy the content Example.md file from the /Templates to your new folder. (The templates folder contains an example structure of how your scripts folder should look like) Add the PowerShell script or Console app code to the same folder. Make sure the PS filename is the same as the .md file Update the .md file with all the needed details Update the toc.yml file in the PowerShell or ConsoleApps folder and include your new script. Navigate to GitHub and create a new pull request into the main branch. Selec either the 'New PowerShell Script' or 'New Console Application' template and fill in all the details Wait for approval 🎉 Creating a GitHub Issue Navigate to the GitHub repo Go to \"Issues\" and create a new one Select the 'Script Submission Request' template Fill in all the template details. Someone from the dw-script-lib team will contact you 🎉"
   },
   "index.html": {
     "href": "index.html",
-    "title": "This is the HOMEPAGE. | DW Scripts Lib",
-    "keywords": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+    "title": "DW Script Lib. | DW Scripts Lib",
+    "keywords": "DW Script Lib. Welcome to the dw-script-lib documentation page. This library is intented to have one centralized location of all PowerShell scripts and Console applications that are reusable. Here you will find all relevant information regarding the script (how to use them, how to contribute, ...). General information The general information page will give you all the details you need about this library. Do you want to contribute to the library? Do you have a script that you think might be usefull? do you see additions to the framework itself? All these question will be handled there PowerShell The PowerShell section is the place-to-be for all Microfoft relates PowerShell script. All the scripts are listed with all the needed information like prerequisites, technology and even examples Console Applications Do you think PowerShell will not solve your problem and that you will need some C# magic, definately check out the Console Apps sections. Here you will find small console applications that interact with Miscrosoft systems with documentation and examples Search Not sure what you are looking for? Just use the search box in the upper right corner and see what you can find 😊. Issues If you encounter any kind of issues with this library, feel free to log an issue on GitHub"
   },
   "PowerShell/Add-PnPField/Add-PnPField.html": {
     "href": "PowerShell/Add-PnPField/Add-PnPField.html",

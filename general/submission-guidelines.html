@@ -5,18 +5,18 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>PLACEHOLDER | DW Scripts Lib </title>
+      <title>Submission guidelines | DW Scripts Lib </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="PLACEHOLDER | DW Scripts Lib ">
+      <meta name="title" content="Submission guidelines | DW Scripts Lib ">
     <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
-      <link rel="shortcut icon" href="../../images/favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
+      <link rel="shortcut icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
-    <meta property="docfx:rel" content="../../">
+    <meta property="docfx:rel" content="../">
     <meta property="docfx:newtab" content="true">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
               </button>
 
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../images/dlw-logo.jpg" alt="">
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/dlw-logo.jpg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -76,21 +76,38 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="placeholder">PLACEHOLDER</h1>
+<h1 id="submission-guidelines">Submission guidelines</h1>
 
-<p>TODO: Add .NET projects to the <em>src</em> folder and run <code>docfx</code> to generate <strong>REAL</strong> <em>API Documentation</em>!</p>
+<p>Do you have a possible interesting and reusable script, then this page is for you. There are two options to submit:</p>
+<ol>
+<li>Using a Pull Request (technical)</li>
+<li>Using a GitHub Issue</li>
+</ol>
+<h2 id="submitting-a-pull-request">Submitting a Pull Request</h2>
+<ol>
+<li>The first step when submitting a new script, is to pull the code to your local machine (<code>git clone https://github.com/dlw-digitalworkplace/dw-script-lib.git</code>).</li>
+<li>Create a new branch that starts from the <code>main</code> branch and use the following naming convention: <code>submission/[name-of-script]</code></li>
+<li>Create a new folder in the <code>PowerShell</code> or <code>ConsoleApps</code> folder (depending on what you are submitting). Give the folder a clear name (e.g. AddUserToGroup, UpdateSharePointListColumn, ...)</li>
+<li>Copy the content <code>Example.md</code> file from the <code>/Templates</code> to your new folder. (The templates folder contains an example structure of how your scripts folder should look like)</li>
+<li>Add the PowerShell script or Console app code to the same folder. Make sure the PS filename is the same as the <code>.md</code> file</li>
+<li>Update the <code>.md</code> file with all the needed details</li>
+<li>Update the <code>toc.yml</code> file in the <code>PowerShell</code> or <code>ConsoleApps</code> folder and include your new script.</li>
+<li>Navigate to GitHub and create a new pull request into the main branch. Selec either the 'New PowerShell Script' or 'New Console Application' template and fill in all the details</li>
+<li>Wait for approval 🎉</li>
+</ol>
+<h2 id="creating-a-github-issue">Creating a GitHub Issue</h2>
+<ol>
+<li>Navigate to the <a href="https://github.com/dlw-digitalworkplace/dw-script-lib">GitHub repo</a></li>
+<li>Go to &quot;Issues&quot; and create a new one</li>
+<li>Select the 'Script Submission Request' template</li>
+<li>Fill in all the template details.</li>
+<li>Someone from the <code>dw-script-lib</code> team will contact you 🎉</li>
+</ol>
 </article>
           </div>
 
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/dlw-digitalworkplace/dw-script-lib/blob/main/Console Apps/App1/App1.md/#L1" class="contribution-link">Improve this Doc</a>
-                  </li>
-                </ul>
-              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
                 <h5>In This Article</h5>
                 <div></div>
@@ -114,8 +131,8 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>
