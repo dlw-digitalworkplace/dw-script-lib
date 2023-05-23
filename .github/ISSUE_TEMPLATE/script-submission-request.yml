@@ -1,7 +1,7 @@
 name: Script Submission Request
 description: Use this template for submitting a script to the repository.
 title: "[Script Submission]: "
-labels: ["New Script"]
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
