@@ -1,9 +1,8 @@
----
 name: Script Submission Request
 about: Use this template to create a new script submission request
 title: "[Submission Request]: "
 labels: ["New Script"]
-assignees: ''
+assignees: ""
 body:
   - type: markdown
     attributes:
@@ -60,4 +59,3 @@ body:
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
----
