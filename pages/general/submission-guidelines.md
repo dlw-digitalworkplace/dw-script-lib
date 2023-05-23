@@ -21,6 +21,8 @@ Do you have a possible interesting and reusable script, then this page is for yo
 4. Fill in all the template details. 
 5. Someone from the `dw-script-lib` team will contact you 🎉
 
+![Issue-Template](../images/issue-template.png)
+
 
 
 
