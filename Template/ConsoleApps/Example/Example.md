@@ -8,6 +8,16 @@
 > Please give a brief explanation of what this script does
 > --------------- DELETE THIS BEFORE SUBMITTING ---------------
 
+## SOURCE
+https://github.com/dlw-digitalworkplace/dw-script-lib/tree/ConsoleApps/[Folder name]
+> --------------- DELETE THIS BEFORE SUBMITTING ---------------
+> Complete the url above. Replace [Folder name] with the name of the folder where the script can be found
+> --------------- DELETE THIS BEFORE SUBMITTING ---------------
+
+## AUTHOR
+ - Name: [name]
+ - Email: [email where people can reach you for more information]
+
 ## Running the console app
 > --------------- DELETE THIS BEFORE SUBMITTING ---------------
 > Describe the needed steps before running the console application

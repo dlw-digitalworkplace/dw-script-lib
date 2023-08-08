@@ -12,6 +12,13 @@ title: Add-PnPField
 ## SYNOPSIS
 Add a field
 
+## SOURCE
+https://github.com/dlw-digitalworkplace/dw-script-lib/tree/PowerShell/Add-PnPField
+
+## AUTHOR
+ - Name: PnP
+ - Email: PnP@pnp.community
+
 ## SYNTAX
 
 ### Add field to list (Default)
