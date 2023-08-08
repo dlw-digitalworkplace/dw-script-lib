@@ -6,7 +6,7 @@ Do you have a possible interesting and reusable script, then this page is for yo
 ## Submitting a Pull Request
 1. The first step when submitting a new script, is to pull the code to your local machine (`git clone https://github.com/dlw-digitalworkplace/dw-script-lib.git`).
 2. Create a new branch that starts from the `main` branch and use the following naming convention: `submission/[name-of-script]`
-3. Create a new folder in the `PowerShell` or `ConsoleApps` folder (depending on what you are submitting). Give the folder a clear name (e.g. AddUserToGroup, UpdateSharePointListColumn, ...)
+3. Create a new folder in the `PowerShell` or `ConsoleApps` folder (depending on what you are submitting). Give the folder a clear name (e.g. Add-UserToGroup, Update-SharePointListColumn, ...)
 4. Copy the content `Example.md` file from the `/Templates` to your new folder. (The templates folder contains an example structure of how your scripts folder should look like)
 5. Add the PowerShell script or Console app code to the same folder. Make sure the PS filename is the same as the `.md` file
 6. Update the `.md` file with all the needed details
