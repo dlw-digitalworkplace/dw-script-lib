@@ -13,7 +13,7 @@ title: Add-PnPField
 Add a field
 
 ## SOURCE
-https://github.com/dlw-digitalworkplace/dw-script-lib/tree/PowerShell/Add-PnPField
+https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Add-PnPField
 
 ## AUTHOR
  - Name: PnP

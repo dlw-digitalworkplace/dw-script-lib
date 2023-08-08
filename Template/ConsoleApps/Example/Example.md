@@ -9,7 +9,7 @@
 > --------------- DELETE THIS BEFORE SUBMITTING ---------------
 
 ## SOURCE
-https://github.com/dlw-digitalworkplace/dw-script-lib/tree/ConsoleApps/[Folder name]
+https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/ConsoleApps/[Folder name]
 > --------------- DELETE THIS BEFORE SUBMITTING ---------------
 > Complete the url above. Replace [Folder name] with the name of the folder where the script can be found
 > --------------- DELETE THIS BEFORE SUBMITTING ---------------
