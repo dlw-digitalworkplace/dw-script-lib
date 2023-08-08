@@ -33,15 +33,18 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "../PowerShell/Add-PnPField/Add-PnPField.md",
+      "source_relative_path": "../PowerShell/Add-TermGroupSPAdmin/Add-TermGroupSpAdmin.md",
       "output": {
         ".html": {
-          "relative_path": "PowerShell/Add-PnPField/Add-PnPField.html"
+          "relative_path": "PowerShell/Add-TermGroupSPAdmin/Add-TermGroupSpAdmin.html"
         }
       },
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "../PowerShell/toc.yml",
       "output": {
@@ -162,6 +165,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
