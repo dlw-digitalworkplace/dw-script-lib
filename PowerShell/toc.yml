@@ -1,2 +1,4 @@
 - name: Add-TermGroupSPAdmin
   href: Add-TermGroupSPAdmin/Add-TermGroupSPAdmin.md
+- name: Restore-DeletedTermSet
+  href: Restore-DeletedTermSet/Restore-DeletedTermSet.md
