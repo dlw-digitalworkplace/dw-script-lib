@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Restore-DeletedTermSet | DW Scripts Lib </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Restore-DeletedTermSet | DW Scripts Lib ">
+    <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
+      <link rel="shortcut icon" href="../../images/favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/dlw-logo.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="restore-deletedtermset">Restore-DeletedTermSet</h1>
+
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>This script can be used to restore a deleted term set by using the TaxonomyHiddenList of a site to restore the used terms.</p>
+<h2 id="source">SOURCE</h2>
+<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Restore-DeletedTermSet">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Restore-DeletedTermSet</a></p>
+<h2 id="author">AUTHOR</h2>
+<ul>
+<li>Name: Ruben Grillaert</li>
+<li>Email: ruben.grillaert@delaware.pro</li>
+</ul>
+<h2 id="syntax">SYNTAX</h2>
+<h3 id="restore-deleted-term-set">Restore deleted term set</h3>
+<pre><code class="lang-powershell">.\Restore-DeletedTermSet.ps1 -TaxonomyHiddenListId &lt;string&gt; -RemovedTermSetId &lt;string&gt; -RemovedTermSetName &lt;string&gt; -RemovedTermSetGroupName &lt;string&gt; -SiteUrl &lt;string&gt;
+</code></pre>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To run the script, the PnP.PowerShell module needs to be installed.
+Further, the following parameters are needed:</p>
+<ol>
+<li>TaxonomyHiddenListId: can be found by adding &quot;/Lists/TaxonomyHiddenList&quot; to the site url</li>
+<li>RemovedTermSetId: the TaxonomyHiddenList contains a field with an ID reference to the term set. By looking for a term in the deleted term set, you can find the ID.</li>
+<li>RemovedTermSetName: name of the term set that has been removed.</li>
+<li>RemovedTermSetGroupName: term group name where the term set was stored.</li>
+<li>SiteUrl: site where the terms are used. This script is not ready to be used for multiple sites because if a child term doesn't have a parent yet in the term set, it will create that term with the correct label but not the correct ID. However, the first part can be modified to group all the data of different sites.</li>
+</ol>
+<h2 id="description">Description</h2>
+<p>When running the script, the following steps are executed:</p>
+<ol>
+<li>Creating a connection with SharePoint. This shows a pop-up the first time.</li>
+<li>Get all the terms from the TaxonomyHiddenList.</li>
+<li>Create the missing term set if needed. If the term set exists, the script continues.</li>
+<li>Adding all root terms that are used directly or that have a child term that is used.</li>
+<li>Adding all child terms by depth incremental. This step also adds parent terms (with a random ID) that were not used in order to restore the tree structure.</li>
+</ol>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1">EXAMPLE 1</h3>
+<pre><code class="lang-powershell">.\Restore-DeletedTermSet.ps1 -TaxonomyHiddenListId &quot;21d0b4a0-8f88-4409-8597-dd2c83f3e98e&quot; -RemovedTermSetId &quot;0fe908e1-1feb-45cd-9152-bfa892412b62&quot; -RemovedTermSetName &quot;ContosoTermSet&quot; -RemovedTermSetGroupName &quot;ContosoTermGroup&quot; -SiteUrl &quot;https://contoso.sharepoint.com/sites/example&quot;
+</code></pre>
+<h2 id="tags">Tags</h2>
+<ul>
+<li>SharePoint online</li>
+<li>Taxonomy</li>
+</ul>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
