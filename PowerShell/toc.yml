@@ -2,3 +2,5 @@
   href: Add-TermGroupSPAdmin/Add-TermGroupSPAdmin.md
 - name: Restore-DeletedTermSet
   href: Restore-DeletedTermSet/Restore-DeletedTermSet.md
+- name: Set-TeamsPolicyToAadGroup
+  href: Set-TeamsPolicyToAadGroup/Set-TeamsPolicyToAadGroup.md
