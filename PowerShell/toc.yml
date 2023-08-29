@@ -3,4 +3,4 @@
 - name: Restore-DeletedTermSet
   href: Restore-DeletedTermSet/Restore-DeletedTermSet.md
 - name: Set-TeamsPolicyToAadGroup
-  href: Set-TeamsPolicyToAadGroup/RSet-TeamsPolicyToAadGroup.md
+  href: Set-TeamsPolicyToAadGroup/Set-TeamsPolicyToAadGroup.md
