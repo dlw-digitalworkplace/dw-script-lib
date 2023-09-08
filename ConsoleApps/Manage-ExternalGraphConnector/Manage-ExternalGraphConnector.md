@@ -42,17 +42,17 @@ To register a schema, you need to create it in the code base:
 1. Create a new class in the `Schemas` folder
 2. Make sure the schema inherits from the `SchemaBase`
 3. Implement the `GetSchemaProperties()` method that returns a list of all properties (See the `DemoSchema.cs` file for an example)
-![](../../images/Manage-ExternalGraphConnector/external-connector-schema.png "Demo Schema")
+![](https://dlw-digitalworkplace.github.io/dw-script-lib/images/Manage-ExternalGraphConnector/external-connector-schema.png "Demo Schema")
 
 ## Screenshots
 #### Overview
-![](../../images/Manage-ExternalGraphConnector/external-connector-options.png "Connector options")
+![](https://dlw-digitalworkplace.github.io/dw-script-lib/images/Manage-ExternalGraphConnector/external-connector-options.png "Connector options")
 #### Creating a connector
-![](../../images/Manage-ExternalGraphConnector/external-connector-create.png "Connector create")
+![](https://dlw-digitalworkplace.github.io/dw-script-lib/images/Manage-ExternalGraphConnector/external-connector-create.png "Connector create")
 #### Deleting a connector
-![](../../images/Manage-ExternalGraphConnector/external-connector-delete.png "Connector delete")
+![](https://dlw-digitalworkplace.github.io/dw-script-lib/images/Manage-ExternalGraphConnector/external-connector-delete.png "Connector delete")
 #### Registering a schema
-![](../../images/Manage-ExternalGraphConnector/external-connector-register.png "Connector schema register")
+![](https://dlw-digitalworkplace.github.io/dw-script-lib/images/Manage-ExternalGraphConnector/external-connector-register.png "Connector schema register")
 
 
 ## Tags
