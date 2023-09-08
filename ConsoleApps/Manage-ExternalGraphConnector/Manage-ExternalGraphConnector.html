@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>PLACEHOLDER | DW Scripts Lib </title>
+      <title>Manage-ExternalGraphConnector | DW Scripts Lib </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="PLACEHOLDER | DW Scripts Lib ">
+      <meta name="title" content="Manage-ExternalGraphConnector | DW Scripts Lib ">
     <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
       <link rel="shortcut icon" href="../../images/favicon.ico">
       <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
@@ -76,16 +76,77 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="placeholder">PLACEHOLDER</h1>
+<h1 id="manage-externalgraphconnector">Manage-ExternalGraphConnector</h1>
 
-<p>TODO: Add .NET projects to the <em>src</em> folder and run <code>docfx</code> to generate <strong>REAL</strong> <em>API Documentation</em>!</p>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>This console application can help you in managing custom connectors for the Microsoft Graph API.
+It connects to the Graph API and can handle the following commands:</p>
+<ol>
+<li>View all registered connectors</li>
+<li>View the search schema of all registered connectors</li>
+<li>Create a new external connector</li>
+<li>Delete an external connector</li>
+<li>Register a search schema for an existing connector</li>
+</ol>
+<h2 id="source">SOURCE</h2>
+<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/ConsoleApps/Manage-ExternalGraphConnector">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/ConsoleApps/Manage-ExternalGraphConnector</a>.</p>
+<p>The code is also partly based on the PartsInventoryConnector sample:
+<a href="https://github.com/microsoftgraph/msgraph-search-connector-sample/tree/main/PartsInventoryConnector">https://github.com/microsoftgraph/msgraph-search-connector-sample/tree/main/PartsInventoryConnector</a></p>
+<h2 id="author">AUTHOR</h2>
+<ul>
+<li>Name: Robin Agten</li>
+<li>Email: robin.agten@delaware.pro</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>The code uses .NET Core 7 so this must be installen</li>
+<li>A valid app registration (client id, client secret) with the following applicatoin permissions:
+<ul>
+<li>ExternalConnection.ReadWrite.All</li>
+<li>ExternalItem.ReadWrite.All</li>
+</ul>
+</li>
+</ul>
+<h2 id="running-the-console-app">Running the console app</h2>
+<h3 id="running-in-visual-studio">Running in visual studio</h3>
+<ol>
+<li>Open Visual Studio Solution</li>
+<li>Update the user secrets of the project (see the <code>secrets_sample.json</code> file)</li>
+<li>Run the console application</li>
+</ol>
+<h3 id="running-in-the-command-line">Running in the command line</h3>
+<p>It is also possible to run it via the command line.</p>
+<pre><code class="lang-powershell">.\Imec.WhoIsWho.ConnectorSetup.exe -s &quot;CLIENT_SECRET&quot; -c &quot;CLIENT_ID&quot; -t &quot;TENANT_ID&quot;
+</code></pre>
+<h3 id="schema-definition">Schema definition</h3>
+<p>To register a schema, you need to create it in the code base:</p>
+<ol>
+<li>Create a new class in the <code>Schemas</code> folder</li>
+<li>Make sure the schema inherits from the <code>SchemaBase</code></li>
+<li>Implement the <code>GetSchemaProperties()</code> method that returns a list of all properties (See the <code>DemoSchema.cs</code> file for an example)
+<img src="/images/Manage-ExternalGraphConnector/external-connector-schema.png" alt="" title="Demo Schema"></li>
+</ol>
+<h2 id="screenshots">Screenshots</h2>
+<h4 id="overview">Overview</h4>
+<p><img src="/images/Manage-ExternalGraphConnector/external-connector-options.png" alt="" title="Connector options"></p>
+<h4 id="creating-a-connector">Creating a connector</h4>
+<p><img src="/images/Manage-ExternalGraphConnector/external-connector-create.png" alt="" title="Connector create"></p>
+<h4 id="deleting-a-connector">Deleting a connector</h4>
+<p><img src="/images/Manage-ExternalGraphConnector/external-connector-delete.png" alt="" title="Connector delete"></p>
+<h4 id="registering-a-schema">Registering a schema</h4>
+<p><img src="/images/Manage-ExternalGraphConnector/external-connector-register.png" alt="" title="Connector schema register"></p>
+<h2 id="tags">Tags</h2>
+<ul>
+<li>Microsoft Graph</li>
+<li>External Connector</li>
+</ul>
 </article>
           </div>
 
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>

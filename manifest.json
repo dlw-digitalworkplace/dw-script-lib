@@ -13,10 +13,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "../ConsoleApps/App1/App1.md",
+      "source_relative_path": "../ConsoleApps/Manage-ExternalGraphConnector/Manage-ExternalGraphConnector.md",
       "output": {
         ".html": {
-          "relative_path": "ConsoleApps/App1/App1.html"
+          "relative_path": "ConsoleApps/Manage-ExternalGraphConnector/Manage-ExternalGraphConnector.html"
         }
       },
       "version": ""
@@ -117,6 +117,56 @@
       "output": {
         ".html": {
           "relative_path": "general/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Manage-ExternalGraphConnector/external-connector-create.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Manage-ExternalGraphConnector/external-connector-create.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Manage-ExternalGraphConnector/external-connector-delete.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Manage-ExternalGraphConnector/external-connector-delete.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Manage-ExternalGraphConnector/external-connector-options.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Manage-ExternalGraphConnector/external-connector-options.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Manage-ExternalGraphConnector/external-connector-register.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Manage-ExternalGraphConnector/external-connector-register.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Manage-ExternalGraphConnector/external-connector-schema.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Manage-ExternalGraphConnector/external-connector-schema.png"
         }
       },
       "version": ""
