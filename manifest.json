@@ -12,6 +12,9 @@
       }
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "../ConsoleApps/Manage-ExternalGraphConnector/Manage-ExternalGraphConnector.md",
       "output": {
