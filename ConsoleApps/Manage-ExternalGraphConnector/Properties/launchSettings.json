@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Manage-ExternalGraphConnector": {
+      "commandName": "Project",
+      "commandLineArgs": "--debug"
+    }
+  }
+}
