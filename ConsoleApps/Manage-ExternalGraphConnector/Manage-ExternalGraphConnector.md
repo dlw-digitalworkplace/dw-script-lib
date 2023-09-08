@@ -37,11 +37,22 @@ It is also possible to run it via the command line.
 .\Imec.WhoIsWho.ConnectorSetup.exe -s "CLIENT_SECRET" -c "CLIENT_ID" -t "TENANT_ID"
 ```
 
+### Schema definition
+To register a schema, you need to create it in the code base:
+1. Create a new class in the `Schemas` folder
+2. Make sure the schema inherits from the `SchemaBase`
+3. Implement the `GetSchemaProperties()` method that returns a list of all properties (See the `DemoSchema.cs` file for an example)
+![](/images/Manage-ExternalGraphConnector/external-connector-schema.png "Demo Schema")
+
 ## Screenshots
-![](./assets/external-connector-options.png "Connector options")
-![](./assets/external-connector-create.png "Connector create")
-![](./assets/external-connector-delete.png "Connector delete")
-![](./assets/external-connector-register.png "Connector schema register")
+#### Overview
+![](/images/Manage-ExternalGraphConnector/external-connector-options.png "Connector options")
+#### Creating a connector
+![](/images/Manage-ExternalGraphConnector/external-connector-create.png "Connector create")
+#### Deleting a connector
+![](/images/Manage-ExternalGraphConnector/external-connector-delete.png "Connector delete")
+#### Registering a schema
+![](/images/Manage-ExternalGraphConnector/external-connector-register.png "Connector schema register")
 
 
 ## Tags
