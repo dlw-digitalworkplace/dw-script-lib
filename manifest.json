@@ -43,6 +43,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "../PowerShell/Import-KeyVaultFromExcel/Import-KeyVaultFromExcel.md",
+      "output": {
+        ".html": {
+          "relative_path": "PowerShell/Import-KeyVaultFromExcel/Import-KeyVaultFromExcel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "../PowerShell/Restore-DeletedTermSet/Restore-DeletedTermSet.md",
       "output": {
         ".html": {

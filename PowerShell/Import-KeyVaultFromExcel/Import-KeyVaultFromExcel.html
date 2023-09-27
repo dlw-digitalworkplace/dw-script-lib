@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Import-KeyVaultFromExcel | DW Scripts Lib </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Import-KeyVaultFromExcel | DW Scripts Lib ">
+    <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
+      <link rel="shortcut icon" href="../../images/favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/dlw-logo.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="import-keyvaultfromexcel">Import-KeyVaultFromExcel</h1>
+
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>This script imports keyVault secrets based on an excel sheet.</p>
+<h2 id="source">SOURCE</h2>
+<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Import-KeyVaultFromExcel">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Import-KeyVaultFromExcel</a></p>
+<h2 id="author">AUTHOR</h2>
+<ul>
+<li>Name: Pieter Vandendriessche</li>
+<li>Email: pieter.vandendriessche@delaware.pro</li>
+</ul>
+<h2 id="syntax">SYNTAX</h2>
+<h3 id="add-admin-to-tenant-taxonomy-store">Add admin to tenant taxonomy store</h3>
+<pre><code class="lang-powershell">.\Import-KeyVaultFromExcel.ps1 -subscriptionId &lt;string&gt; -keyVaultName &lt;string&gt; -fileName &lt;string&gt; -sheetName &lt;string&gt;
+</code></pre>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The following PowerShell modules need to be installed:</p>
+<ul>
+<li>AzureAD PowerShell</li>
+</ul>
+<p>The following input needs to be prepared:</p>
+<ul>
+<li>Excel file with the key in the first column and the value in the second (first row is header). Please see example in folder of script</li>
+</ul>
+<h2 id="description">Description</h2>
+<p>The following steps are executed in this script:</p>
+<ol>
+<li>A login prompt for the entered subscription will happen, an admin on the subscription needs to login</li>
+<li>The excel will be read</li>
+<li>Each added secret will be added to the KeyVault</li>
+</ol>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1">EXAMPLE 1</h3>
+<p>This command will add the app@sharepoint account as an admin to the Products term group on the contoso tenant</p>
+<pre><code class="lang-powershell">.\Import-KeyVaultFromExcel.ps1 -subscriptionId &quot;67d1f400-991a-4960-9d1d-32d8899515c9&quot; -keyVaultName &quot;sibe-wp-mig-ast-tst-kv&quot; -fileName &quot;KeyVaultSecrets.xlsx&quot; -sheetName &quot;Sheet 1&quot;
+</code></pre>
+<h2 id="tags">Tags</h2>
+<ul>
+<li>Key Vault</li>
+<li>Azure AD</li>
+</ul>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
