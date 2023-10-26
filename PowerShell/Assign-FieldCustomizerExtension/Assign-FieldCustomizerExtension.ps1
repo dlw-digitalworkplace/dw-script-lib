@@ -20,7 +20,6 @@ if (-not (Get-Module -Name "PnP.PowerShell" -ListAvailable)) {
 Connect-PnPOnline -Url $siteCollectionUrl -Interactive
 
 # Find the specified field
-$field = $null
 if ($listName -eq $null -or $listName -eq "") {
   $field = Get-PnPField -Identity $fieldInternalName
 }
@@ -33,7 +32,12 @@ if ($null -eq $field) {
   Write-Host -ForegroundColor Red "Field '$fieldInternalName' not found"
 }
 else {
-  Set-PnPField -Identity $field -Values @{ ClientSideComponentId = [GUID]$clientSideComponentId } -updateExistingLists:$UpdateExistingLists
+  if ($updateExistingLists) {
+    Set-PnPField -Identity $field -Values @{ ClientSideComponentId = [GUID]$clientSideComponentId } -updateExistingLists
+  }
+  else {
+    Set-PnPField -Identity $field -Values @{ ClientSideComponentId = [GUID]$clientSideComponentId }
+  }
   Write-Host -ForegroundColor Green "Field '$fieldInternalName' updated"
 }
 
