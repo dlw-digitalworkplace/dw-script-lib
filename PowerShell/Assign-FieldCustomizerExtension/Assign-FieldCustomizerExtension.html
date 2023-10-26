@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Add-TermGroupSPAdmin | DW Scripts Lib </title>
+      <title>Assign-FieldCustomizerExtension | DW Scripts Lib </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Add-TermGroupSPAdmin | DW Scripts Lib ">
+      <meta name="title" content="Assign-FieldCustomizerExtension | DW Scripts Lib ">
     <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
       <link rel="shortcut icon" href="../../images/favicon.ico">
       <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
@@ -76,46 +76,46 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="add-termgroupspadmin">Add-TermGroupSPAdmin</h1>
+<h1 id="assign-fieldcustomizerextension">Assign-FieldCustomizerExtension</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>This script can be used to add the sp add-in account (app@sharepoint) to a term group. In the modern taxonomy store this cannot be done manually anymore.</p>
+<p>This small PowerShell script can be used to assign an SPFx field customizer extension to a SharePoint column.
+The extension can be assigned to a field on site level or list level based on the client side component id of the SPFx solution</p>
 <h2 id="source">SOURCE</h2>
-<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Add-TermGroupSPAdmin">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Add-TermGroupSPAdmin</a></p>
+<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Assign-FieldCustomizerExtension">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Assign-FieldCustomizerExtension</a></p>
 <h2 id="author">AUTHOR</h2>
 <ul>
-<li>Name: Jens Van Dale</li>
-<li>Email: jens.vandale@delaware.pro</li>
+<li>Name: Robin Agten</li>
+<li>Email: robin.agten@delaware.pro</li>
 </ul>
 <h2 id="syntax">SYNTAX</h2>
-<h3 id="add-admin-to-tenant-taxonomy-store">Add admin to tenant taxonomy store</h3>
-<pre><code class="lang-powershell">.\Add-TermGroupSPAdmin.ps1 -siteUrl &lt;string&gt; -termGroupName &lt;string&gt;
+<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &lt;string&gt; -fieldInternalName &lt;string&gt; -clientSideComponentId &lt;string&gt; -listName &lt;string&gt; [-updateExistingLists]
 </code></pre>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>The following PowerShell modules need to be installed:</p>
 <ul>
-<li>PnP.PowerShell</li>
-<li>SharePoint Online Management Shell</li>
+<li>PnP.PowerShell v1.22 (will be installed automatically if not available)</li>
 </ul>
 <h2 id="description">Description</h2>
-<p>The following steps are executed in this script:</p>
-<ol>
-<li>Some SharePoint dll's are loaded from the SharePoint Online Management Shell (Taxonomy)</li>
-<li>A connection to SharePoint is made using PnP.PowerShell</li>
-<li>A taxonomy session is build</li>
-<li>The term gropu is loaded based on the provided term group name</li>
-<li>The app@sharepoint account is added as a admin to this term group</li>
-<li>The SharePoint connection is disconnected</li>
-</ol>
+<p>This script will execute the following:</p>
+<ul>
+<li>Install PnP.PowerShell if needed</li>
+<li>Get the SP field based on the internal name and list name</li>
+<li>Update the SP field porperty <code>clientSideComponentId</code> with the provided id</li>
+</ul>
 <h2 id="examples">EXAMPLES</h2>
-<h3 id="example-1">EXAMPLE 1</h3>
-<p>This command will add the app@sharepoint account as an admin to the Products term group on the contoso tenant</p>
-<pre><code class="lang-powershell">.\Add-TermGroupSPAdmin.ps1 -siteUrl &quot;https://contoso-admin.sharepoint.com&quot; -termGroupName &quot;Products&quot;
+<h3 id="example-1-assign-to-site-level-column">EXAMPLE 1: Assign to site level column</h3>
+<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId &quot;f5b9454b-ba41-487b-9978-8d526f7f838d&quot;
+</code></pre>
+<h3 id="example-2-assign-to-site-level-column-and-update-all-lists-that-contain-the-column">EXAMPLE 2: Assign to site level column and update all lists that contain the column</h3>
+<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId -updateExistingLists
+</code></pre>
+<h3 id="example-3-assing-to-list-level-column">EXAMPLE 3: Assing to list level column</h3>
+<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId -listName &quot;FieldCustomizer&quot;
 </code></pre>
 <h2 id="tags">Tags</h2>
 <ul>
-<li>SharePoint online</li>
-<li>Taxonomy</li>
+<li>SharePoint</li>
+<li>SPFx field customizer</li>
 </ul>
 
 </article>

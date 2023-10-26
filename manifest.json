@@ -1,5 +1,4 @@
 {
-  "homepages": [],
   "source_base_path": "/home/runner/work/dw-script-lib/dw-script-lib/pages",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -37,6 +36,16 @@
       "output": {
         ".html": {
           "relative_path": "PowerShell/Add-TermGroupSPAdmin/Add-TermGroupSPAdmin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../PowerShell/Assign-FieldCustomizerExtension/Assign-FieldCustomizerExtension.md",
+      "output": {
+        ".html": {
+          "relative_path": "PowerShell/Assign-FieldCustomizerExtension/Assign-FieldCustomizerExtension.html"
         }
       },
       "version": ""
@@ -252,7 +261,6 @@
       "version": ""
     }
   ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"
