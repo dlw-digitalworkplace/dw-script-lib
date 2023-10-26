@@ -11,7 +11,7 @@ Do you have a possible interesting and reusable script, then this page is for yo
 5. Add the PowerShell script or Console app code to the same folder. Make sure the PS filename is the same as the `.md` file
 6. Update the `.md` file with all the needed details
 7. Update the `toc.yml` file in the `PowerShell` or `ConsoleApps` folder and include your new script. 
-8. Navigate to GitHub and create a new pull request into the main branch. Selec either the 'New PowerShell Script' or 'New Console Application' template and fill in all the details
+8. Navigate to GitHub and create a new pull request into the main branch. Select either the 'New PowerShell Script' or 'New Console Application' template and fill in all the details
 9. Wait for approval 🎉
 
 ## Creating a GitHub Issue

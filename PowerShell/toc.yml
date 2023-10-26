@@ -1,5 +1,7 @@
 - name: Add-TermGroupSPAdmin
   href: Add-TermGroupSPAdmin/Add-TermGroupSPAdmin.md
+- name: Assign-FieldCustomizerExtension
+  href: Assign-FieldCustomizerExtension/Assign-FieldCustomizerExtension.md
 - name: Restore-DeletedTermSet
   href: Restore-DeletedTermSet/Restore-DeletedTermSet.md
 - name: Set-TeamsPolicyToAadGroup
