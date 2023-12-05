@@ -11,9 +11,9 @@ https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Micro
  - Email: pieter.heemeryck@delaware.pro
 
 ## Prerequisites
-> Please give all needed prerequisites:
->  - PowerShell version >5.1
->  - .NET Framework 4.7.2 or later
+ - PowerShell module 'Microsoft.Graph'
+ - PowerShell version >5.1
+ - .NET Framework 4.7.2 or later
 
 ## Description
 This script guides you through:
