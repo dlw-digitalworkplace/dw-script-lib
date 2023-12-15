@@ -9,4 +9,4 @@
 - name: Import-KeyVaultFromExcel
   href: Import-KeyVaultFromExcel/Import-KeyVaultFromExcel.md
 - name: Explore-MicrosoftGraph
-  href: Explore-MicrosoftGraph/MicrosoftGraph.md
+  href: Explore-MicrosoftGraph/Explore-MicrosoftGraph.md
