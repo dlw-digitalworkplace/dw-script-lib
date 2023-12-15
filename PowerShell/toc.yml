@@ -8,5 +8,5 @@
   href: Set-TeamsPolicyToAadGroup/Set-TeamsPolicyToAadGroup.md
 - name: Import-KeyVaultFromExcel
   href: Import-KeyVaultFromExcel/Import-KeyVaultFromExcel.md
-- name: MicrosoftGraph
-  href: MicrosoftGraph/MicrosoftGraph.md
+- name: Explore-MicrosoftGraph
+  href: Explore-MicrosoftGraph/MicrosoftGraph.md
