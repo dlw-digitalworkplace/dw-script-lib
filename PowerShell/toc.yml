@@ -10,3 +10,5 @@
   href: Import-KeyVaultFromExcel/Import-KeyVaultFromExcel.md
 - name: Explore-MicrosoftGraphModule
   href: Explore-MicrosoftGraphModule/Explore-MicrosoftGraphModule.md
+- name: Copy-FolderToDifferentSiteDifferentTenant
+  href: Copy-FolderToDifferentSiteDifferentTenant/Copy-FolderToDifferentSiteDifferentTenant.md
