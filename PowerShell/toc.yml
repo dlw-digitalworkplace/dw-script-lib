@@ -10,3 +10,5 @@
   href: Import-KeyVaultFromExcel/Import-KeyVaultFromExcel.md
 - name: Explore-MicrosoftGraphModule
   href: Explore-MicrosoftGraphModule/Explore-MicrosoftGraphModule.md
+- name: Reset-UserStorageQuota
+  href: Reset-UserStorageQuota/Reset-UserStorageQuota.md
