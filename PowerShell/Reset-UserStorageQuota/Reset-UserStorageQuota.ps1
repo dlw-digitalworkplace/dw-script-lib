@@ -15,9 +15,13 @@ $storageQuota = $tenantSettings.OneDriveStorageQuota
 
 # Get all OneDrive sites of users
 $personalOneDrives = Get-SPOSite -IncludePersonalSite $true -Limit all -Filter "Url -like '-my.sharepoint.com/personal/'" | Select -ExpandProperty Url
+$driveCount = $personalOneDrives.Count
+
+Write-Host "INFO: Found $driveCount Drives to check"
 
 foreach($oneDriveSite in $personalOneDrives)
 {
+    Write-Host "INFO: Validating site $oneDriveSite for storage quota"
     $userSite = Get-SPOSite -Identity $oneDriveSite
 
     if($userSite.StorageQuota -ne $storageQuota)
@@ -25,10 +29,10 @@ foreach($oneDriveSite in $personalOneDrives)
         $userQuota = $userSite.StorageQuota
         $userStorageUsage = $userSite.StorageUsageCurrent
 
-        Write-Host "Site with url '$oneDriveSite' has different storage quota ($userQuota / $storageQuota (max. allowed))"
-        Write-Host "Site with url '$oneDriveSite' the current used space is $userStorageUsage"
+        Write-Host "INFO: Site with url '$oneDriveSite' has different storage quota ($userQuota / $storageQuota (max. allowed))"
+        Write-Host "INFO: Site with url '$oneDriveSite' the current used space is $userStorageUsage"
 
         Set-SPOSite -Identity $oneDriveSite -StorageQuotaReset
-        Write-Host -ForegroundColor Green "Storage quota has been reset to tenant quota for site '$oneDriveSite'"
+        Write-Host -ForegroundColor Green "SUCCESS: Storage quota has been reset to tenant quota for site '$oneDriveSite'"
     }
 }
