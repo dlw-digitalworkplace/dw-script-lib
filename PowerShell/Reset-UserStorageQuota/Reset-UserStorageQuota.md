@@ -11,7 +11,6 @@ https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Reset
  - Email: pieter.vandendriessche@delaware.pro
 
 ## SYNTAX
-### Add admin to tenant taxonomy store
 ```powershell
 .\Reset-UserStorageQuota.ps1
 ```
