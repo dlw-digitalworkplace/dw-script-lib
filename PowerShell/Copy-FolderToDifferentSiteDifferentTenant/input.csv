@@ -1,3 +1,3 @@
 srcSiteURL;dstSiteUrl;srcFolder;dstFolder;libraryName
-https://sibelgatst.sharepoint.com/sites/PJ-000049/;https://sibelgatst.sharepoint.com/sites/PJ-000050/;Project Management;Project Delivery/01. Opportunity - Sketch;Documents
-https://sibelgatst.sharepoint.com/sites/PJ-000049/;https://sibelgatst.sharepoint.com/sites/PJ-000050/;Work Area;Project Delivery/01. Opportunity - Sketch/02. Reporting;Documents
+https://site.sharepoint.com/sites/srcsiteName/;https://site.sharepoint.com/sites/dstSiteName/;General;Migrated Files;Documents
+https://site.sharepoint.com/sites/srcsiteName/;https://site.sharepoint.com/sites/dstSiteName/;General;Migrated Files;Documents
