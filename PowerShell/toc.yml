@@ -12,3 +12,5 @@
   href: Explore-MicrosoftGraphModule/Explore-MicrosoftGraphModule.md
 - name: Reset-UserStorageQuota
   href: Reset-UserStorageQuota/Reset-UserStorageQuota.md
+- name: Copy-FolderToDifferentSiteDifferentTenant
+  href: Copy-FolderToDifferentSiteDifferentTenant/Copy-FolderToDifferentSiteDifferentTenant.md
