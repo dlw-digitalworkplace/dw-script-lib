@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Reset-SiteSearchIndex | DW Scripts Lib </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Reset-SiteSearchIndex | DW Scripts Lib ">
+    <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
+    
+      <link rel="shortcut icon" href="../../images/favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/dlw-logo.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="reset-sitesearchindex">Reset-SiteSearchIndex</h1>
+
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>This script allows you to reset the search index for a specific site collection or a set of site collections.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Be careful when using this script. Resetting the search index of site might cause heavy loads on the search index process of your tenant.</p>
+</div>
+<h2 id="source">SOURCE</h2>
+<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Reset-SiteSearchIndex">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Reset-SiteSearchIndex</a></p>
+<h2 id="author">AUTHOR</h2>
+<ul>
+<li>Name: Robin Agten</li>
+<li>Email: robin.agten@delaware.pro</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>PnP.PowerShell v1.22 (will be installed automatically if not available)</li>
+</ul>
+<h2 id="description">Description</h2>
+<p>This script will follow the following execution path:</p>
+<ol>
+<li>Install PnP.PowerShell if not available</li>
+<li>Check if the <code>allSiteCollections</code> flag is enables</li>
+<li>If enabled:
+<ol>
+<li>Validate if the sp admin url is provided</li>
+<li>Validate and warn if no url filter is provided</li>
+<li>Fetch all site collections</li>
+<li>Loop all site collections and reindex</li>
+</ol>
+</li>
+<li>Else:
+<ol>
+<li>Validate if the site collection url is provided</li>
+<li>Reindex the site collection</li>
+</ol>
+</li>
+</ol>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1---single-site-collection">EXAMPLE 1 - Single site collection</h3>
+<pre><code class="lang-powershell">.\Reset-SiteSearchIndex.ps1 -siteCollectionUrl &quot;https://site.sharepoint.com/sites/sitecollection1&quot;
+</code></pre>
+<h3 id="example---multiple-site-collections">EXAMPLE - Multiple site collections</h3>
+<p>All site collections containing '/contoso-' in the url will be reset</p>
+<pre><code class="lang-powershell">.\Reset-SiteSearchIndex.ps1 -multipleSiteCollections -spAdminUrl &quot;https://agtenrdev-admin.sharepoint.com&quot; -siteCollectionUrlFilter '/contoso-'
+</code></pre>
+<h3 id="example---all-site-collections">EXAMPLE - All site collections</h3>
+<p>All site collections containing '/contoso-' in the url will be reset</p>
+<pre><code class="lang-powershell">.\Reset-SiteSearchIndex.ps1 -multipleSiteCollections -spAdminUrl &quot;https://agtenrdev-admin.sharepoint.com&quot;
+</code></pre>
+<h2 id="tags">Tags</h2>
+<ul>
+<li>SharePoint</li>
+<li>Search</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

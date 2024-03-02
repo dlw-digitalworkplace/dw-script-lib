@@ -85,6 +85,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "../PowerShell/Reset-SiteSearchIndex/Reset-SiteSearchIndex.md",
+      "output": {
+        ".html": {
+          "relative_path": "PowerShell/Reset-SiteSearchIndex/Reset-SiteSearchIndex.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "../PowerShell/Reset-UserStorageQuota/Reset-UserStorageQuota.md",
       "output": {
         ".html": {
