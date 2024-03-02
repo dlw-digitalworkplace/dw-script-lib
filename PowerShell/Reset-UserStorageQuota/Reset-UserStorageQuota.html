@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Copy-FolderToDifferentSiteDifferentTenant | DW Scripts Lib </title>
+      <title>Reset-UserStorageQuota | DW Scripts Lib </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Copy-FolderToDifferentSiteDifferentTenant | DW Scripts Lib ">
+      <meta name="title" content="Reset-UserStorageQuota | DW Scripts Lib ">
     <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
     
       <link rel="shortcut icon" href="../../images/favicon.ico">
@@ -77,85 +77,35 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="copy-foldertodifferentsitedifferenttenant">Copy-FolderToDifferentSiteDifferentTenant</h1>
+<h1 id="reset-userstoragequota">Reset-UserStorageQuota</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>This script will copy the contents of a folder from one site to a specific folder in the target. This all based on the values in the input csv.</p>
+<p>This script resets the storage quota for an end-user to the quota that has been set in the tenant settings.</p>
 <h2 id="source">SOURCE</h2>
-<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Copy-FolderToDifferentSiteDifferentTenant">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Copy-FolderToDifferentSiteDifferentTenant</a></p>
+<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Reset-UserStorageQuota">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Reset-UserStorageQuota</a></p>
 <h2 id="author">AUTHOR</h2>
 <ul>
 <li>Name: Pieter Vandendriessche</li>
 <li>Email: pieter.vandendriessche@delaware.pro</li>
 </ul>
-<h2 id="prerequisites">Prerequisites</h2>
-<ul>
-<li>A user account with sufficient privileges on source site (first prompt)</li>
-<li>A user account with sufficient privileges on destination site (second prompt)</li>
-</ul>
-<h2 id="parameters">Parameters</h2>
-<table>
-<thead>
-<tr>
-<th>Variable name</th>
-<th>Variable Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$inputCsv</td>
-<td>The absolute path of the input csv</td>
-<td>/</td>
-</tr>
-</tbody>
-</table>
-<h2 id="input-file">Input file</h2>
-<table>
-<thead>
-<tr>
-<th>Column Name</th>
-<th>Column Description</th>
-<th>Example</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>srcSiteURL</td>
-<td>The url of the source site</td>
-<td><a href="https://x.sharepoint.com/sites/PJ-050">https://x.sharepoint.com/sites/PJ-050</a></td>
-<td></td>
-</tr>
-<tr>
-<td>dstSiteUrl</td>
-<td>the url of the destination site</td>
-<td><a href="https://x.sharepoint.com/sites/PJ-051">https://x.sharepoint.com/sites/PJ-051</a></td>
-<td></td>
-</tr>
-<tr>
-<td>srcFolder</td>
-<td>The name of the folder where the input needs to be copied from.</td>
-<td>Project Management</td>
-<td></td>
-</tr>
-<tr>
-<td>dstFolder</td>
-<td>The name of the folder where the files need to be dropped in</td>
-<td>Project Delivery/01. Opportunity Sketch</td>
-<td></td>
-</tr>
-<tr>
-<td>libraryName</td>
-<td>The name of the library where the files originate from</td>
-<td>Documents</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="example">Example</h2>
-<pre><code class="lang-PowerShell">.\Copy-FolderToDifferentSiteDifferentTenant.ps1 -inputCsv &quot;&quot;
+<h2 id="syntax">SYNTAX</h2>
+<pre><code class="lang-powershell">.\Reset-UserStorageQuota.ps1
 </code></pre>
+<h2 id="description">Description</h2>
+<p>The following steps are executed in this script:</p>
+<ol>
+<li>When the module is not installed, it will install automatically</li>
+<li>Input for the tenant admin site url will be asked</li>
+<li>A login prompt will be shown, log in with the tenant administrator credentials</li>
+<li>The script fetches all the sites and reset the quota if different from tenant quota</li>
+</ol>
+<h2 id="tags">Tags</h2>
+<ul>
+<li>Storage</li>
+<li>OneDrive</li>
+<li>SharePoint</li>
+<li>Administration</li>
+</ul>
 
 </article>
           </div>
