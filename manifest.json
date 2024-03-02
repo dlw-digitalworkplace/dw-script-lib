@@ -24,11 +24,11 @@
       "type": "Toc",
       "source_relative_path": "../ConsoleApps/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "ConsoleApps/toc.json"
-        },
         ".html": {
           "relative_path": "ConsoleApps/toc.html"
+        },
+        ".json": {
+          "relative_path": "ConsoleApps/toc.json"
         }
       },
       "version": ""
@@ -49,6 +49,16 @@
       "output": {
         ".html": {
           "relative_path": "PowerShell/Assign-FieldCustomizerExtension/Assign-FieldCustomizerExtension.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../PowerShell/Copy-FolderToDifferentSiteDifferentTenant/Copy-FolderToDifferentSiteDifferentTenant.md",
+      "output": {
+        ".html": {
+          "relative_path": "PowerShell/Copy-FolderToDifferentSiteDifferentTenant/Copy-FolderToDifferentSiteDifferentTenant.html"
         }
       },
       "version": ""
@@ -97,11 +107,11 @@
       "type": "Toc",
       "source_relative_path": "../PowerShell/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "PowerShell/toc.json"
-        },
         ".html": {
           "relative_path": "PowerShell/toc.html"
+        },
+        ".json": {
+          "relative_path": "PowerShell/toc.json"
         }
       },
       "version": ""
@@ -150,11 +160,11 @@
       "type": "Toc",
       "source_relative_path": "general/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "general/toc.json"
-        },
         ".html": {
           "relative_path": "general/toc.html"
+        },
+        ".json": {
+          "relative_path": "general/toc.json"
         }
       },
       "version": ""
@@ -273,11 +283,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""
