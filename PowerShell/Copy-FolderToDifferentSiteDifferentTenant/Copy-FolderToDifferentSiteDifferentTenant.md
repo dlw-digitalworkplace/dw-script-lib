@@ -1,5 +1,14 @@
-## Description
+# Copy-FolderToDifferentSiteDifferentTenant
+
+## SYNOPSIS
 This script will copy the contents of a folder from one site to a specific folder in the target. This all based on the values in the input csv.
+
+## SOURCE
+https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Copy-FolderToDifferentSiteDifferentTenant
+
+## AUTHOR
+ - Name: Pieter Vandendriessche
+ - Email: pieter.vandendriessche@delaware.pro
 
 ## Prerequisites
  - A user account with sufficient privileges on source site (first prompt)
