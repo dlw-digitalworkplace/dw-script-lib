@@ -2,15 +2,15 @@
   href: Add-TermGroupSPAdmin/Add-TermGroupSPAdmin.md
 - name: Assign-FieldCustomizerExtension
   href: Assign-FieldCustomizerExtension/Assign-FieldCustomizerExtension.md
+- name: Copy-FolderToDifferentSiteDifferentTenant
+  href: Copy-FolderToDifferentSiteDifferentTenant/Copy-FolderToDifferentSiteDifferentTenant.md
+- name: Explore-MicrosoftGraphModule
+  href: Explore-MicrosoftGraphModule/Explore-MicrosoftGraphModule.md
+- name: Import-KeyVaultFromExcel
+  href: Import-KeyVaultFromExcel/Import-KeyVaultFromExcel.md
+- name: Reset-UserStorageQuota
+  href: Reset-UserStorageQuota/Reset-UserStorageQuota.md
 - name: Restore-DeletedTermSet
   href: Restore-DeletedTermSet/Restore-DeletedTermSet.md
 - name: Set-TeamsPolicyToAadGroup
   href: Set-TeamsPolicyToAadGroup/Set-TeamsPolicyToAadGroup.md
-- name: Import-KeyVaultFromExcel
-  href: Import-KeyVaultFromExcel/Import-KeyVaultFromExcel.md
-- name: Explore-MicrosoftGraphModule
-  href: Explore-MicrosoftGraphModule/Explore-MicrosoftGraphModule.md
-- name: Reset-UserStorageQuota
-  href: Reset-UserStorageQuota/Reset-UserStorageQuota.md
-- name: Copy-FolderToDifferentSiteDifferentTenant
-  href: Copy-FolderToDifferentSiteDifferentTenant/Copy-FolderToDifferentSiteDifferentTenant.md
