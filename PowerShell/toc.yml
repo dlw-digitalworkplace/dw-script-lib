@@ -16,3 +16,5 @@
   href: Restore-DeletedTermSet/Restore-DeletedTermSet.md
 - name: Set-TeamsPolicyToAadGroup
   href: Set-TeamsPolicyToAadGroup/Set-TeamsPolicyToAadGroup.md
+- name: Add-GraphPermissions-Managed-Identity
+  href: Add-GraphPermissions-Managed-Identity.md
