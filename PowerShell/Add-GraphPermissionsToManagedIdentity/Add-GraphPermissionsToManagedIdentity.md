@@ -1,10 +1,10 @@
-# Add-GraphPermissions-Managed-Identity
+# Add-GraphPermissionsToManagedIdentity
 
 ## SYNOPSIS
 This script can be used to add Graph Permissions to the Managed Identity of your App Service. Keep in mind that you need Global Admin permissions to run this script.
 
 ## SOURCE
-https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Add-GraphPermissions-Managed-Identity
+https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Add-GraphPermissionsToManagedIdentity
 
 ## AUTHOR
  - Name: Wout Torremans

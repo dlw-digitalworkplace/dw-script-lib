@@ -22,7 +22,6 @@ foreach($AppRole in $oAppRole)
 {
   $oAppRoleAssignment = @{
     "PrincipalId" = $oMSI.ObjectId
-    #"ResourceId" = $GraphAppId
     "ResourceId" = $oGraphSpn.ObjectId
     "AppRoleId" = $AppRole.Id
   }
