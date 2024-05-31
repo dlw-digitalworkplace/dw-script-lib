@@ -13,7 +13,7 @@ https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Add-G
 ## SYNTAX
 ### {Example} (Default)
 ```powershell
-./Add-GraphPermissions-Managed-Identity.ps1 -tenantId <string> -managedIdentityName <string> -permissions <string[]>
+./Add-GraphPermissionsToManagedIdentity.ps1 -tenantId <string> -managedIdentityName <string> -permissions <string[]>
 ```
 
 ## Prerequisites
@@ -34,7 +34,7 @@ The following steps are executed:
 ### EXAMPLE 1
 This example will add the Sites.ReadWrite.All and Directory.ReadWrite.All app roles to the managed identity with the name test on the tenant with id xxxx-xxxx-xxxx
 ```powershell
-.\Add-GraphPermissions-Managed-Identity.ps1 -tenantId xxxx-xxxx-xxxx -managedIdentityName test -permissions @("Directory.ReadWrite.All","Sites.ReadWrite.All")
+.\Add-GraphPermissionsToManagedIdentity.ps1 -tenantId xxxx-xxxx-xxxx -managedIdentityName test -permissions @("Directory.ReadWrite.All","Sites.ReadWrite.All")
 ```
 
 ## Tags
