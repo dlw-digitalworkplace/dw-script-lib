@@ -17,4 +17,4 @@
 - name: Set-TeamsPolicyToAadGroup
   href: Set-TeamsPolicyToAadGroup/Set-TeamsPolicyToAadGroup.md
 - name: Add-GraphPermissionsToManagedIdentity
-  href: Add-GraphPermissionsToManagedIdentity.md
+  href: Add-GraphPermissionsToManagedIdentity/Add-GraphPermissionsToManagedIdentity.md
