@@ -6,20 +6,25 @@ This script can be used to add Graph Permissions to the Managed Identity of your
 ## SOURCE
 https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Add-GraphPermissionsToManagedIdentity
 
-## AUTHOR
+## AUTHORS
  - Name: Wout Torremans
  - Email: wout.torremans@delaware.pro
 
 ## SYNTAX
 ### {Example} (Default)
 ```powershell
-./Add-GraphPermissionsToManagedIdentity.ps1 -tenantId <string> -managedIdentityName <string> -permissions <string[]>
+./Add-GraphPermissionsToManagedIdentity-AzureADModule.ps1 -tenantId <string> -managedIdentityName <string> -permissions <string[]>
+./Add-GraphPermissionsToManagedIdentity-AzModule.ps1 -tenantId <string> -managedIdentityObjectId <string> -permissions <string[]>
 ```
 
-## Prerequisites
+## Prerequisites AzureADModule
 > The following PowerShell modules need to be installed
 >  - AzureAD
 >  - Microsoft.Graph
+
+## Prerequisites AzModule
+> The following PowerShell modules need to be installed
+>  - Az
 
 ## Description
 The following steps are executed:
@@ -31,12 +36,20 @@ The following steps are executed:
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### EXAMPLE 1, AzureAD Module
 This example will add the Sites.ReadWrite.All and Directory.ReadWrite.All app roles to the managed identity with the name test on the tenant with id xxxx-xxxx-xxxx
 ```powershell
-.\Add-GraphPermissionsToManagedIdentity.ps1 -tenantId xxxx-xxxx-xxxx -managedIdentityName test -permissions @("Directory.ReadWrite.All","Sites.ReadWrite.All")
+./Add-GraphPermissionsToManagedIdentity-AzureADModule.ps1 -tenantId xxxx-xxxx-xxxx -managedIdentityName test -permissions @("Directory.ReadWrite.All","Sites.ReadWrite.All")
+```
+
+
+### EXAMPLE 2, Az Module
+This example will add the Sites.ReadWrite.All and Directory.ReadWrite.All app roles to the managed identity with the objectId yyyy-yyyy-yyyy on the tenant with id xxxx-xxxx-xxxx
+```powershell
+./Add-GraphPermissionsToManagedIdentity-AzModule.ps1 -tenantId xxxx-xxxx-xxxx -managedIdentityObjectId yyyy-yyyy-yyyy -permissions @("Directory.ReadWrite.All","Sites.ReadWrite.All")
 ```
 
 ## Tags
  * MS Graph
  * Azure AD
+ * Powershell
