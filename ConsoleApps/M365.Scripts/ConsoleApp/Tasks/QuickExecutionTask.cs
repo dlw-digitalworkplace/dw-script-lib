@@ -1,8 +1,8 @@
-﻿using General_ConsoleApp.TasksSetup;
+﻿using ConsoleApp.TasksSetup;
 using Microsoft.Extensions.Configuration;
 using Services.Interfaces.SharePoint;
 
-namespace Scripts.Tasks
+namespace ConsoleApp.Tasks
 {
     /// <summary>
     /// This script can be used to validate some small actions, test some things,...

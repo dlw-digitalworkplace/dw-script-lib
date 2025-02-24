@@ -1,4 +1,4 @@
-﻿using Core.Classes;
+﻿using Azure.Core;
 
 namespace Services.Interfaces
 {

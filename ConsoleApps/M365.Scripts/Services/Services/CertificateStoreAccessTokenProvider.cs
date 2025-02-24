@@ -13,6 +13,7 @@ namespace Services.Services
         private readonly IMemoryCache _memoryCache;
         private readonly IConfiguration _configuration;
         private const string CachePrefix = nameof(CertificateStoreAccessTokenProvider);
+        private static TimeSpan expirationOffset = TimeSpan.FromSeconds(120);
 
         public CertificateStoreAccessTokenProvider(IMemoryCache memoryCache, IConfiguration configuration)
         {
@@ -20,13 +21,18 @@ namespace Services.Services
             _configuration = configuration;
         }
 
-        public async Task<Core.Classes.AccessToken> GetTokenAsync(string resource)
+        public async Task<AccessToken> GetTokenAsync(string resource)
         {
             var cacheKey = $"{CachePrefix}_{resource}";
-            var expirationOffset = TimeSpan.FromSeconds(-5);
+            var certificateThumbprint = _configuration[Globals.Application.ClientCertificateThumbprint];
 
-            if (!_memoryCache.TryGetValue<Core.Classes.AccessToken>(cacheKey, out var token) ||
-                token == null ||
+            if (string.IsNullOrWhiteSpace(certificateThumbprint))
+            {
+                throw new ArgumentNullException("There was no certification thumbprint found.");
+            }
+
+            if (!_memoryCache.TryGetValue<AccessToken>(cacheKey, out var token) ||
+                token.Equals(null) ||
                 token.ExpiresOn < DateTimeOffset.UtcNow.Add(expirationOffset))
             {
                 using var certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
@@ -34,7 +40,7 @@ namespace Services.Services
 
                 var certificates = certStore.Certificates.Find(
                     X509FindType.FindByThumbprint,
-                    _configuration[Globals.Application.ClientCertificateThumbprint],
+                    certificateThumbprint,
                     false
                 );
 
@@ -50,7 +56,7 @@ namespace Services.Services
                     new TokenRequestContext(new[] { resource })
                 );
 
-                token = new Core.Classes.AccessToken(
+                token = new AccessToken(
                     azureCredentialToken.Token,
                     azureCredentialToken.ExpiresOn.Add(expirationOffset)
                 );

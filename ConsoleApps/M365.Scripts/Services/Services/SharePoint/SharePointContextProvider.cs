@@ -25,7 +25,7 @@ namespace Services.Services.SharePoint
             spContext.ExecutingWebRequest += (sender, e) =>
             {
                 e.WebRequestExecutor.WebRequest.Headers[HttpRequestHeader.Authorization] = $"Bearer {accessToken.Token}";
-                e.WebRequestExecutor.WebRequest.UserAgent = "NONISV|delaware|TheFactory/1.0";
+                e.WebRequestExecutor.WebRequest.UserAgent = "NONISV|delaware|TheGodAlmightyScriptRunner/1.0";
             };
 
             return spContext;

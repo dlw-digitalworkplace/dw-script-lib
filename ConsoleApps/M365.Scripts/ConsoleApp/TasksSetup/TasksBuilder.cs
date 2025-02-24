@@ -1,10 +1,11 @@
-﻿using Core.Enums;
-using General_ConsoleApp.TasksSetup;
+﻿using ConsoleApp.TasksSetup;
+using Core.Enums;
+using Core.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Scripts.Tasks
+namespace ConsoleApp.Tasks
 {
     public class TasksBuilder : IHostedService
     {
@@ -16,28 +17,25 @@ namespace Scripts.Tasks
             _serviceProvider = serviceProvider;
         }
 
+        /// <summary>
+        /// This methode is the start of the console app. It generates a menu of all script options and starts executing the selected script.
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            try
+            var option = EnumExtension.PrintMenu<ScriptTask>("Select a script to execute.");
+            return Task.Run(async () =>
             {
-                Console.WriteLine("Select a script to run.");
-                ScriptTaskMenuOptionsHelper.CreateMenu();
-                var input = Console.ReadLine();
-                if (null == input)
-                {
-                    throw new Exception();
-                }
-                var option = (ScriptTask)int.Parse(input);
-                return Task.Run(async () =>
+                try
                 {
                     await _serviceProvider.GetRequiredKeyedService<IScriptTask>(option).RunAsync();
-                });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Something went wrong while running the script");
-            }
-            return Task.CompletedTask;
+                }
+                catch(Exception ex)
+                {
+                    Console.Error.WriteLine(ex.Message);
+                }
+            });
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

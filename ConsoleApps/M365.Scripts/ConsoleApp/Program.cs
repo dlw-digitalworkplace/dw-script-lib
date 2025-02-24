@@ -1,4 +1,4 @@
-﻿using General_ConsoleApp.Startup;
+﻿using ConsoleApp.Startup;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,7 +25,8 @@ public class Program
 
         }).ConfigureServices((context, services) =>
         {
-            DependencyInjection.InjectDependencies(services);
+            services.RegisterServices();
+            services.RegisterKeyedServices();
 
             services.AddSingleton(context.Configuration);
             services.AddLogging(configure => configure.AddConsole());
