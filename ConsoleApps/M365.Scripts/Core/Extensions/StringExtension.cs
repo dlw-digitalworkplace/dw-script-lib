@@ -4,7 +4,7 @@
     {
         public static int GetIntConfigValue(this string? configValue)
         {
-            var config =  string.IsNullOrWhiteSpace(configValue) ? 0 : int.Parse(configValue);
+            var config = int.TryParse(configValue, out int parsedValue) ? parsedValue : 0;
             return config;
         }
 
