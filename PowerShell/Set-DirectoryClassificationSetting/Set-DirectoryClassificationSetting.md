@@ -1,7 +1,7 @@
 # Set-DirectoryClassificationSetting
 
 ## SYNOPSIS
-This script allows you to set the allowed classification list and creates a new group setting object if not already present.
+This script allows you to set the allowed classification list and creates a new group setting object if not already present. It also shown a warning if `EnableMIPLabels` is set to true, this would mean that the classification settings will be ignored.
 
 Originally this script was also going to include setting the `DefaultClassification` & `ClassificationDescriptions` settings, but at the time of making the script these give HTTP 500 errors (beta endpoints be like 😉), if required, these can be added in the same way as the `ClassificationList` setting.
 

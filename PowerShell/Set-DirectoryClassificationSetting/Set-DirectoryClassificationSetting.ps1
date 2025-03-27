@@ -56,6 +56,12 @@ try {
         Write-Host "INFO: Created new setting with ID '$($Setting.Id)' from template with ID '$TemplateId'" -ForegroundColor Yellow
     }
 
+    # Check if EnableMIPLabels is set to true
+    $EnableMIPLabels = ($Setting.Values | Where-Object { $_.Name -eq "EnableMIPLabels" }).Value
+    if ($null -ne $EnableMIPLabels -and $EnableMIPLabels -eq "true") {
+        Write-Host "WARNING: 'EnableMIPLabels' is set to 'true', classification settings will be ignored and sensitivity labels published in Microsoft Purview compliance portal will be used instead" -ForegroundColor Red
+    }
+
     # Update the existing setting
     Write-Host "INFO: Updating setting with new values" -ForegroundColor Green
 
