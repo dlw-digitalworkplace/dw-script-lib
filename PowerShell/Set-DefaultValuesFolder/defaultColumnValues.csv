@@ -1,0 +1,6 @@
+﻿folder;item_id;category;status;product_name;manufacturer;release_year;stock_year
+folderNameA12345;A12345;Electronics|xyz98765-6b94-4e25-bd7a-111222333444;Available|abc12345-abcd-4462-bc16-fc11c4c25499;Wireless Headphones;SoundMax;2020;2023
+folderNameB98765;B98765;Home Appliance|lmn54321-6b94-4e25-bd7a-555666777888;Out of Stock|def12345-abcd-4462-bc16-fc11c4c25500;Air Purifier;CleanAir;2018;2022
+folderNameC54321;C54321;Furniture|opq98765-6b94-4e25-bd7a-999000111222;Available|ghi98765-abcd-4462-bc16-fc11c4c25501;Office Chair;ComfortCo;2019;2024
+folderNameD67890;D67890;Sports|rst22222-6b94-4e25-bd7a-333444555666;Available|jkl54321-abcd-4462-bc16-fc11c4c25502;Tennis Racket;Sportify;2021;2025
+folderNameE13579;E13579;Outdoor|uvw11111-6b94-4e25-bd7a-444555666777;Discontinued|mno67890-abcd-4462-bc16-fc11c4c25503;Camping Tent;Outdoorsman;2017;2022

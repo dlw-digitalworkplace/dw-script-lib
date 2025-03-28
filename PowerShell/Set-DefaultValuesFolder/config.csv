@@ -1,0 +1,8 @@
+csvColumn;sharePointField;isManagedMetadata
+item_id;Item ID;False
+product_name;Product Name;False
+category;Category;True
+status;Status;True
+manufacturer;Manufacturer;False
+release_year;Release Year;False
+stock_year;Stock Year;False
