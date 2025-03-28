@@ -18,3 +18,5 @@
   href: Set-TeamsPolicyToAadGroup/Set-TeamsPolicyToAadGroup.md
 - name: Add-GraphPermissionsToManagedIdentity
   href: Add-GraphPermissionsToManagedIdentity/Add-GraphPermissionsToManagedIdentity.md
+- name: Set-DirectoryClassificationSetting
+  href: Set-DirectoryClassificationSetting/Set-DirectoryClassificationSetting.md
