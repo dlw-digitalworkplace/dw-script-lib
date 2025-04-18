@@ -1,4 +1,4 @@
-# List-ItemPermissions
+# List-SharingLinks
 
 ## SYNOPSIS
 This console application gets you started using the Microsoft Graph API C# SDK v5.77, written in .NET 8.
@@ -17,7 +17,7 @@ Sharing links are detected by checking the driveItem/<id>/permissions endpoint. 
 - Expiration date (optional DateTime)
 
 ## SOURCE
-https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/ConsoleApps/List-ItemPermissions.
+https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/ConsoleApps/List-SharingLinks.
 
 ## Relevant MS docs
 
