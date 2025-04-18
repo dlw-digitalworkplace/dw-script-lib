@@ -1,2 +1,5 @@
 - name: Manage-ExternalGraphConnector
   href: Manage-ExternalGraphConnector/Manage-ExternalGraphConnector.md
+
+- name: List-ItemPermissions
+  href: List-ItemPermissions/List-ItemPermissions.md
