@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Assign-FieldCustomizerExtension | DW Scripts Lib </title>
+      <title>List-SharingLinks | DW Scripts Lib </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Assign-FieldCustomizerExtension | DW Scripts Lib ">
+      <meta name="title" content="List-SharingLinks | DW Scripts Lib ">
     <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
     
       <link rel="shortcut icon" href="../../images/favicon.ico">
@@ -77,46 +77,62 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="assign-fieldcustomizerextension">Assign-FieldCustomizerExtension</h1>
+<h1 id="list-sharinglinks">List-SharingLinks</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>This small PowerShell script can be used to assign an SPFx field customizer extension to a SharePoint column.
-The extension can be assigned to a field on site level or list level based on the client side component id of the SPFx solution</p>
+<p>This console application gets you started using the Microsoft Graph API C# SDK v5.77, written in .NET 8.
+It connects to the Graph API using a client secret.</p>
+<p>Some sample methods are provided, such as fetching a site, its lists, list items. Mostly the focus is on fetching any custom permissions on driveItems, detecting sharing links.</p>
+<p>Sharing links are detected by checking the driveItem/<id>/permissions endpoint. When the 'link' property is not null, it is a sharing link. The following output can be found:</id></p>
+<ul>
+<li>Shared with who?</li>
+<li>Role (read | write)</li>
+<li>Type (view | edit)</li>
+<li>Scope (anonymous | users | organization)</li>
+<li>Prevents download (boolean)</li>
+<li>Has password (boolean)</li>
+<li>Expiration date (optional DateTime)</li>
+</ul>
 <h2 id="source">SOURCE</h2>
-<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Assign-FieldCustomizerExtension">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Assign-FieldCustomizerExtension</a></p>
+<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/ConsoleApps/List-SharingLinks">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/ConsoleApps/List-SharingLinks</a>.</p>
+<h2 id="relevant-ms-docs">Relevant MS docs</h2>
+<p>For getting driveItems, detecting sharing links:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/graph/api/resources/permission?view=graph-rest-1.0">A permission on a drive item</a>: Permissions have many different forms. The permission resource represents these different forms through facets on the resource.</li>
+<li><a href="https://learn.microsoft.com/en-us/graph/api/resources/sharinglink?view=graph-rest-1.0">A sharing link (specific type of permission)</a>: if a permission resource has a non-null sharingLink facet, the permission represents a sharing link (as opposed to permissions granted to a person or group).</li>
+<li><a href="https://learn.microsoft.com/en-us/graph/api/driveitem-createlink?view=graph-rest-1.0&amp;tabs=http">Create sharing link</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/api/driveitem-list-permissions?view=graph-rest-1.0&amp;tabs=http">Listing permissions</a>: you can differentiate if the permission is inherited or not by checking the inheritedFrom property</li>
+<li><a href="https://learn.microsoft.com/en-us/graph/api/permission-grant?view=graph-rest-1.0&amp;tabs=csharp">Grant access to an existing sharing link</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/api/permission-delete?view=graph-rest-1.0&amp;tabs=http">Delete a sharing permission from a file</a>: this correctly removes the sharing link as perceived in the SPO UI</li>
+<li><a href="https://learn.microsoft.com/en-us/graph/api/shares-get?view=graph-rest-1.0&amp;tabs=http">Accessing shared drive items</a>: did not contain any extra useful info (although 'owner' should be in there)...</li>
+<li><a href="https://learn.microsoft.com/en-us/graph/api/resources/shareddriveitem?view=graph-rest-1.0">Shared drive item</a>: did not contain any extra useful info (although 'owner' should be in there)...</li>
+</ul>
 <h2 id="author">AUTHOR</h2>
 <ul>
-<li>Name: Robin Agten</li>
-<li>Email: robin.agten@delaware.pro</li>
+<li>Name: Pieter Heemeryck</li>
+<li>Email: pieter.heemeryck@delaware.pro</li>
 </ul>
-<h2 id="syntax">SYNTAX</h2>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &lt;string&gt; -fieldInternalName &lt;string&gt; -clientSideComponentId &lt;string&gt; -listName &lt;string&gt; [-updateExistingLists]
-</code></pre>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>PnP.PowerShell v1.22 (will be installed automatically if not available)</li>
-</ul>
-<h2 id="description">Description</h2>
-<p>This script will execute the following:</p>
+<li>The code uses .NET 8 so this must be installed</li>
+<li>A valid app registration (client id, client secret) with the following application permissions:
 <ul>
-<li>Install PnP.PowerShell if needed</li>
-<li>Get the SP field based on the internal name and list name</li>
-<li>Update the SP field porperty <code>clientSideComponentId</code> with the provided id</li>
+<li>Sites.ReadWrite.All</li>
 </ul>
-<h2 id="examples">EXAMPLES</h2>
-<h3 id="example-1-assign-to-site-level-column">EXAMPLE 1: Assign to site level column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId &quot;f5b9454b-ba41-487b-9978-8d526f7f838d&quot;
-</code></pre>
-<h3 id="example-2-assign-to-site-level-column-and-update-all-lists-that-contain-the-column">EXAMPLE 2: Assign to site level column and update all lists that contain the column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId -updateExistingLists
-</code></pre>
-<h3 id="example-3-assing-to-list-level-column">EXAMPLE 3: Assing to list level column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId -listName &quot;FieldCustomizer&quot;
-</code></pre>
+</li>
+</ul>
+<h2 id="running-the-console-app">Running the console app</h2>
+<h3 id="running-in-visual-studio">Running in visual studio</h3>
+<ol>
+<li>Open Visual Studio Solution</li>
+<li>Update the user secrets of the project (see the <code>appsettings.json</code> file)</li>
+<li>Run the console application</li>
+</ol>
+<h2 id="screenshots">Screenshots</h2>
+<p>None</p>
 <h2 id="tags">Tags</h2>
 <ul>
-<li>SharePoint</li>
-<li>SPFx field customizer</li>
+<li>Microsoft Graph</li>
 </ul>
 
 </article>

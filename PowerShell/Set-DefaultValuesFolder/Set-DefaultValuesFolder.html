@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Assign-FieldCustomizerExtension | DW Scripts Lib </title>
+      <title>Set-DefaultValuesFolder | DW Scripts Lib </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Assign-FieldCustomizerExtension | DW Scripts Lib ">
+      <meta name="title" content="Set-DefaultValuesFolder | DW Scripts Lib ">
     <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
     
       <link rel="shortcut icon" href="../../images/favicon.ico">
@@ -77,46 +77,49 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="assign-fieldcustomizerextension">Assign-FieldCustomizerExtension</h1>
+<h1 id="set-defaultvaluesfolder">Set-DefaultValuesFolder</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>This small PowerShell script can be used to assign an SPFx field customizer extension to a SharePoint column.
-The extension can be assigned to a field on site level or list level based on the client side component id of the SPFx solution</p>
+<p>This script connects to a SharePoint site and sets default column values for folders in a document library based on data from CSV files.</p>
 <h2 id="source">SOURCE</h2>
-<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Assign-FieldCustomizerExtension">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Assign-FieldCustomizerExtension</a></p>
+<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Set-DefaultValuesFolder">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Set-DefaultValuesFolder</a></p>
 <h2 id="author">AUTHOR</h2>
 <ul>
-<li>Name: Robin Agten</li>
-<li>Email: robin.agten@delaware.pro</li>
+<li>Name: Arne Meersman</li>
+<li>Email: arne.meersman@delaware.pro</li>
 </ul>
 <h2 id="syntax">SYNTAX</h2>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &lt;string&gt; -fieldInternalName &lt;string&gt; -clientSideComponentId &lt;string&gt; -listName &lt;string&gt; [-updateExistingLists]
+<h3 id="set">Set</h3>
+<pre><code class="lang-powershell">.\Set-DefaultValuesFolder.ps1 -clientId &lt;string&gt; -siteUrl &lt;string&gt; -libraryName &lt;string&gt; -pathToDataCsv &lt;string&gt; -pathToConfigCsv &lt;string&gt; -folderKey &lt;string&gt;
 </code></pre>
 <h2 id="prerequisites">Prerequisites</h2>
+<p>The following PowerShell modules need to be installed:</p>
 <ul>
-<li>PnP.PowerShell v1.22 (will be installed automatically if not available)</li>
+<li>PnP PowerShell</li>
+</ul>
+<p>The following input needs to be prepared:</p>
+<ul>
+<li>Data CSV file: Contains folder name and values to be set (first row is header)</li>
+<li>Config CSV file: Maps columns in the data file to SharePoint fields (first row is header)</li>
 </ul>
 <h2 id="description">Description</h2>
-<p>This script will execute the following:</p>
-<ul>
-<li>Install PnP.PowerShell if needed</li>
-<li>Get the SP field based on the internal name and list name</li>
-<li>Update the SP field porperty <code>clientSideComponentId</code> with the provided id</li>
-</ul>
+<p>The following steps are executed in this script:</p>
+<ol>
+<li>The script connects to the specified SharePoint site.</li>
+<li>The data from the CSV file is read, including folder paths and values for columns.</li>
+<li>Each folder will have its default column values set based on the data and configuration provided.</li>
+</ol>
 <h2 id="examples">EXAMPLES</h2>
-<h3 id="example-1-assign-to-site-level-column">EXAMPLE 1: Assign to site level column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId &quot;f5b9454b-ba41-487b-9978-8d526f7f838d&quot;
-</code></pre>
-<h3 id="example-2-assign-to-site-level-column-and-update-all-lists-that-contain-the-column">EXAMPLE 2: Assign to site level column and update all lists that contain the column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId -updateExistingLists
-</code></pre>
-<h3 id="example-3-assing-to-list-level-column">EXAMPLE 3: Assing to list level column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId -listName &quot;FieldCustomizer&quot;
+<h3 id="example-1">EXAMPLE 1</h3>
+<p>This command will set default column values for folders in the &quot;Documents&quot; library of the &quot;https://contoso.sharepoint.com/sites/example&quot; SharePoint site:</p>
+<pre><code class="lang-powershell">.\Set-DefaultValuesFolder.ps1 -clientId &quot;your-client-id&quot; -siteUrl &quot;https://contoso.sharepoint.com/sites/example&quot; -libraryName &quot;Documents&quot; -pathToDataCsv &quot;defaultColumnValues.csv&quot; -pathToConfigCsv &quot;config.csv&quot; -folderKey &quot;folder&quot;
 </code></pre>
 <h2 id="tags">Tags</h2>
 <ul>
 <li>SharePoint</li>
-<li>SPFx field customizer</li>
+<li>PnP PowerShell</li>
+<li>Document Library</li>
+<li>Default Column Values</li>
 </ul>
 
 </article>

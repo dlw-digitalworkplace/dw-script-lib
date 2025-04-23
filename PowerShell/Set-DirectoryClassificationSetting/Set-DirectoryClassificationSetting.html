@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Assign-FieldCustomizerExtension | DW Scripts Lib </title>
+      <title>Set-DirectoryClassificationSetting | DW Scripts Lib </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Assign-FieldCustomizerExtension | DW Scripts Lib ">
+      <meta name="title" content="Set-DirectoryClassificationSetting | DW Scripts Lib ">
     <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
     
       <link rel="shortcut icon" href="../../images/favicon.ico">
@@ -77,46 +77,86 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="assign-fieldcustomizerextension">Assign-FieldCustomizerExtension</h1>
+<h1 id="set-directoryclassificationsetting">Set-DirectoryClassificationSetting</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>This small PowerShell script can be used to assign an SPFx field customizer extension to a SharePoint column.
-The extension can be assigned to a field on site level or list level based on the client side component id of the SPFx solution</p>
+<p>This script allows you to set the allowed classification list and creates a new group setting object if not already present. It also shown a warning if <code>EnableMIPLabels</code> is set to true, this would mean that the classification settings will be ignored.</p>
+<p>Originally this script was also going to include setting the <code>DefaultClassification</code> &amp; <code>ClassificationDescriptions</code> settings, but at the time of making the script these give HTTP 500 errors (beta endpoints be like 😉), if required, these can be added in the same way as the <code>ClassificationList</code> setting.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This script uses commands that are still in beta!</p>
+</div>
 <h2 id="source">SOURCE</h2>
-<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Assign-FieldCustomizerExtension">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Assign-FieldCustomizerExtension</a></p>
+<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Set-DirectoryClassificationSetting">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Set-DirectoryClassificationSetting</a></p>
 <h2 id="author">AUTHOR</h2>
 <ul>
-<li>Name: Robin Agten</li>
-<li>Email: robin.agten@delaware.pro</li>
+<li>Name: Ewout Hebbrecht</li>
+<li>Email: ewout.hebbrecht@delaware.pro</li>
+<li>Original creator: Nick Sevens</li>
+<li>Original creator email: nick.sevens@delaware.pro</li>
 </ul>
-<h2 id="syntax">SYNTAX</h2>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &lt;string&gt; -fieldInternalName &lt;string&gt; -clientSideComponentId &lt;string&gt; -listName &lt;string&gt; [-updateExistingLists]
-</code></pre>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>PnP.PowerShell v1.22 (will be installed automatically if not available)</li>
+<li>An app registration with graph application <code>Directory.ReadWrite.All</code> permission, for Workspaces this should be the main app registration.</li>
+<li>A certificate added to the same app registration for authentication, this certificate is also installed on your machine for use</li>
 </ul>
 <h2 id="description">Description</h2>
-<p>This script will execute the following:</p>
+<p>This script will follow the following execution path:</p>
+<ol>
+<li>Install <code>Microsoft.Graph</code> &amp; <code>Microsoft.Graph.Beta</code> if not already installed</li>
+<li>Get existing <code>Group.Unified</code> setting</li>
+<li>Create new <code>Group.Unified</code> setting if none was found</li>
+<li>Set <code>ClassificationList</code> if value is provided</li>
+</ol>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Variable name</th>
+<th>Mandatory</th>
+<th>Variable Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ClassificationList</td>
+<td>False</td>
+<td>A comma-delimited list of valid classification values that can be applied to Microsoft 365 groups.</td>
+<td>Internal,Confidential</td>
+</tr>
+<tr>
+<td>$TenantId</td>
+<td>True</td>
+<td>The tenant ID of the app registration</td>
+<td>00000000-0000-0000-0000-000000000000</td>
+</tr>
+<tr>
+<td>$ClientId</td>
+<td>True</td>
+<td>The client ID of the app registration</td>
+<td>00000000-0000-0000-0000-000000000000</td>
+</tr>
+<tr>
+<td>$CertificateThumbprint</td>
+<td>True</td>
+<td>The thumprint of the certificate installed on the app registration</td>
+<td>a909502dd82ae41433e6f83886b00d4277a32a7b</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>Install PnP.PowerShell if needed</li>
-<li>Get the SP field based on the internal name and list name</li>
-<li>Update the SP field porperty <code>clientSideComponentId</code> with the provided id</li>
+<li>All parameters are of type string</li>
 </ul>
 <h2 id="examples">EXAMPLES</h2>
-<h3 id="example-1-assign-to-site-level-column">EXAMPLE 1: Assign to site level column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId &quot;f5b9454b-ba41-487b-9978-8d526f7f838d&quot;
-</code></pre>
-<h3 id="example-2-assign-to-site-level-column-and-update-all-lists-that-contain-the-column">EXAMPLE 2: Assign to site level column and update all lists that contain the column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId -updateExistingLists
-</code></pre>
-<h3 id="example-3-assing-to-list-level-column">EXAMPLE 3: Assing to list level column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId -listName &quot;FieldCustomizer&quot;
+<h3 id="example-1">EXAMPLE 1</h3>
+<p>This will set the <code>ClassificationList</code> setting.</p>
+<pre><code class="lang-powershell">.\Set-DirectoryClassificationSetting -ClassificationList &quot;Internal,Confidential&quot; -TenantId &quot;00000000-0000-0000-0000-000000000000&quot; -ClientId &quot;00000000-0000-0000-0000-000000000000&quot; -CertificateThumbprint &quot;a909502dd82ae41433e6f83886b00d4277a32a7b&quot;
 </code></pre>
 <h2 id="tags">Tags</h2>
 <ul>
-<li>SharePoint</li>
-<li>SPFx field customizer</li>
+<li>Azure AD</li>
+<li>Graph</li>
 </ul>
 
 </article>

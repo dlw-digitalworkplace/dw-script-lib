@@ -12,6 +12,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "../ConsoleApps/List-SharingLinks/List-SharingLinks.md",
+      "output": {
+        ".html": {
+          "relative_path": "ConsoleApps/List-SharingLinks/List-SharingLinks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "../ConsoleApps/Manage-ExternalGraphConnector/Manage-ExternalGraphConnector.md",
       "output": {
         ".html": {
@@ -24,11 +34,11 @@
       "type": "Toc",
       "source_relative_path": "../ConsoleApps/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "ConsoleApps/toc.json"
-        },
         ".html": {
           "relative_path": "ConsoleApps/toc.html"
+        },
+        ".json": {
+          "relative_path": "ConsoleApps/toc.json"
         }
       },
       "version": ""
@@ -125,6 +135,36 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "../PowerShell/Set-DefaultValuesFolder/Set-DefaultValuesFolder.md",
+      "output": {
+        ".html": {
+          "relative_path": "PowerShell/Set-DefaultValuesFolder/Set-DefaultValuesFolder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../PowerShell/Set-DirectoryClassificationSetting/Set-DirectoryClassificationSetting.md",
+      "output": {
+        ".html": {
+          "relative_path": "PowerShell/Set-DirectoryClassificationSetting/Set-DirectoryClassificationSetting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../PowerShell/Set-FileMetadataFromParentFolder/Set-FileMetadataFromParentFolder.md",
+      "output": {
+        ".html": {
+          "relative_path": "PowerShell/Set-FileMetadataFromParentFolder/Set-FileMetadataFromParentFolder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "../PowerShell/Set-TeamsPolicyToAadGroup/Set-TeamsPolicyToAadGroup.md",
       "output": {
         ".html": {
@@ -137,11 +177,11 @@
       "type": "Toc",
       "source_relative_path": "../PowerShell/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "PowerShell/toc.json"
-        },
         ".html": {
           "relative_path": "PowerShell/toc.html"
+        },
+        ".json": {
+          "relative_path": "PowerShell/toc.json"
         }
       },
       "version": ""
@@ -190,11 +230,11 @@
       "type": "Toc",
       "source_relative_path": "general/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "general/toc.json"
-        },
         ".html": {
           "relative_path": "general/toc.html"
+        },
+        ".json": {
+          "relative_path": "general/toc.json"
         }
       },
       "version": ""
@@ -313,11 +353,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""

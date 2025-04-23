@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Assign-FieldCustomizerExtension | DW Scripts Lib </title>
+      <title>Set-FileMetadataFromParentFolder | DW Scripts Lib </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Assign-FieldCustomizerExtension | DW Scripts Lib ">
+      <meta name="title" content="Set-FileMetadataFromParentFolder | DW Scripts Lib ">
     <meta name="description" content="This library will give you explanations on handy scripts created by your colleagues.">
     
       <link rel="shortcut icon" href="../../images/favicon.ico">
@@ -77,46 +77,47 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="assign-fieldcustomizerextension">Assign-FieldCustomizerExtension</h1>
+<h1 id="set-filemetadatafromparentfolder">Set-FileMetadataFromParentFolder</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>This small PowerShell script can be used to assign an SPFx field customizer extension to a SharePoint column.
-The extension can be assigned to a field on site level or list level based on the client side component id of the SPFx solution</p>
+<p>This script updates the metadata of files based on the parent folder in a SharePoint document library. It ensures that files get the same metadata as their parent folder, one level above.</p>
 <h2 id="source">SOURCE</h2>
-<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Assign-FieldCustomizerExtension">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Assign-FieldCustomizerExtension</a></p>
+<p><a href="https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Set-FileMetadataFromParentFolder">https://github.com/dlw-digitalworkplace/dw-script-lib/tree/main/PowerShell/Set-FileMetadataFromParentFolder</a></p>
 <h2 id="author">AUTHOR</h2>
 <ul>
-<li>Name: Robin Agten</li>
-<li>Email: robin.agten@delaware.pro</li>
+<li>Name: Arne Meersman</li>
+<li>Email: arne.meersman@delaware.pro</li>
 </ul>
 <h2 id="syntax">SYNTAX</h2>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &lt;string&gt; -fieldInternalName &lt;string&gt; -clientSideComponentId &lt;string&gt; -listName &lt;string&gt; [-updateExistingLists]
+<h3 id="update-file-metadata-based-on-parent-folder">Update file metadata based on parent folder</h3>
+<pre><code class="lang-powershell">Set-FileMetadataFromParentFolder -ClientId &lt;String&gt; -SiteUrl &lt;String&gt; -LibraryName &lt;String&gt; -FieldsToCheck &lt;String[]&gt; [-StartId &lt;Int&gt;] [-EndId &lt;Int&gt;]
 </code></pre>
 <h2 id="prerequisites">Prerequisites</h2>
+<p>The following PowerShell modules need to be installed:</p>
 <ul>
-<li>PnP.PowerShell v1.22 (will be installed automatically if not available)</li>
+<li>PnP PowerShell</li>
+</ul>
+<p>To successfully execute this script, the following prerequisites must be met:</p>
+<ul>
+<li>You have the necessary permissions to make changes to the files in the library.</li>
+<li>Ensure metadata fields are configured in the SharePoint library. !!If there is no metadata on the parent folder, the metadata on its child files will be removed!!</li>
 </ul>
 <h2 id="description">Description</h2>
-<p>This script will execute the following:</p>
-<ul>
-<li>Install PnP.PowerShell if needed</li>
-<li>Get the SP field based on the internal name and list name</li>
-<li>Update the SP field porperty <code>clientSideComponentId</code> with the provided id</li>
-</ul>
+<p>This script updates the metadata of files based on the parent folder in a SharePoint document library. It ensures that files get the same metadata as their parent folder, one level above. Additionally, you have the option to define a start and end point to run the script for a specific section of the library or to execute the script in smaller parts. You also have the ability to choose which metadata fields you want to copy to the files.</p>
 <h2 id="examples">EXAMPLES</h2>
-<h3 id="example-1-assign-to-site-level-column">EXAMPLE 1: Assign to site level column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId &quot;f5b9454b-ba41-487b-9978-8d526f7f838d&quot;
+<h3 id="example-1-dont-use-startid--endid">EXAMPLE 1: Don't use startId &amp; endId</h3>
+<p>Set metadata based on parent folders for the following metadata fields: Project, Project Name, Field3, Field4. In this example we go over the whole library.</p>
+<pre><code class="lang-powershell">.\Set-MetadataBasedOnParent.ps1 -clientId &quot;your-client-id&quot; -siteUrl &quot;https://contoso.sharepoint.com/sites/example&quot; -libraryName &quot;Documents&quot; -fieldsToCheck @(&quot;Project&quot;, &quot;Project_x0020_Name&quot;, &quot;Field3&quot;, &quot;Field4&quot;)
 </code></pre>
-<h3 id="example-2-assign-to-site-level-column-and-update-all-lists-that-contain-the-column">EXAMPLE 2: Assign to site level column and update all lists that contain the column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId -updateExistingLists
-</code></pre>
-<h3 id="example-3-assing-to-list-level-column">EXAMPLE 3: Assing to list level column</h3>
-<pre><code class="lang-powershell">.\Assign-FieldCustomizerExtension.ps1 -siteCollectionUrl &quot;https://contoso.sharepoint.com/sites/form-customizer&quot; -fieldInternalName &quot;Title&quot; -clientSideComponentId -listName &quot;FieldCustomizer&quot;
+<h3 id="example-2-use-startid--endid">EXAMPLE 2: Use startId &amp; endId</h3>
+<p>Set metadata based on parent folders for the following metadata fields: Project, Project Name, Field3, Field4. In this example we use the startId and endId to edit files with Id between 100000 and 200000.</p>
+<pre><code class="lang-powershell">.\Set-MetadataBasedOnParent.ps1 -clientId &quot;your-client-id&quot; -siteUrl &quot;https://contoso.sharepoint.com/sites/example&quot; -libraryName &quot;Documents&quot; -fieldsToCheck @(&quot;Project&quot;, &quot;Project_x0020_Name&quot;, &quot;Field3&quot;, &quot;Field4&quot;) -startId 100000 -endId 200000
 </code></pre>
 <h2 id="tags">Tags</h2>
 <ul>
 <li>SharePoint</li>
-<li>SPFx field customizer</li>
+<li>PnP.PowerShell</li>
+<li>Metadata Management</li>
 </ul>
 
 </article>
