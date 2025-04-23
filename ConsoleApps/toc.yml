@@ -1,2 +1,5 @@
 - name: Manage-ExternalGraphConnector
   href: Manage-ExternalGraphConnector/Manage-ExternalGraphConnector.md
+
+- name: List-SharingLinks
+  href: List-SharingLinks/List-SharingLinks.md
