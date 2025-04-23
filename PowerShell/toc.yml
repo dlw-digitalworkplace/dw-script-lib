@@ -22,3 +22,5 @@
   href: Set-DirectoryClassificationSetting/Set-DirectoryClassificationSetting.md
 - name: Set-DefaultValuesFolder
   href: Set-DefaultValuesFolder/Set-DefaultValuesFolder.md
+- name: Set-FileMetadataFromParentFolder
+  href: Set-FileMetadataFromParentFolder/Set-FileMetadataFromParentFolder.md
