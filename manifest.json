@@ -34,11 +34,11 @@
       "type": "Toc",
       "source_relative_path": "../ConsoleApps/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "ConsoleApps/toc.html"
-        },
         ".json": {
           "relative_path": "ConsoleApps/toc.json"
+        },
+        ".html": {
+          "relative_path": "ConsoleApps/toc.html"
         }
       },
       "version": ""
@@ -177,11 +177,11 @@
       "type": "Toc",
       "source_relative_path": "../PowerShell/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "PowerShell/toc.html"
-        },
         ".json": {
           "relative_path": "PowerShell/toc.json"
+        },
+        ".html": {
+          "relative_path": "PowerShell/toc.html"
         }
       },
       "version": ""
@@ -230,11 +230,11 @@
       "type": "Toc",
       "source_relative_path": "general/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "general/toc.html"
-        },
         ".json": {
           "relative_path": "general/toc.json"
+        },
+        ".html": {
+          "relative_path": "general/toc.html"
         }
       },
       "version": ""
@@ -353,11 +353,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
