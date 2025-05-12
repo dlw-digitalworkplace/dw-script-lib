@@ -14,18 +14,18 @@
 
 # Variables: Parameters for running the script
 Param(
-    [Parameter(Mandatory = $true)]
-    [string]$clientId, # Azure AD application client ID
-    [Parameter(Mandatory = $true)]
-    [string]$siteUrl, # URL of the SharePoint site
-    [Parameter(Mandatory = $true)]
-    [string]$libraryName, # Name of the document library
-    [Parameter(Mandatory = $true)]
-    [string[]]$fieldsToCheck, # Metadata fields we want to copy to the files
-    [Parameter()]
-    [int]$startId = -1, # Optional: Start point for file IDs, default value of -1
-    [Parameter()]
-    [int]$endId = -1 # Optional: End point for file IDs, default value of -1
+  [Parameter(Mandatory = $true)]
+  [string]$clientId, # Azure AD application client ID
+  [Parameter(Mandatory = $true)]
+  [string]$siteUrl, # URL of the SharePoint site
+  [Parameter(Mandatory = $true)]
+  [string]$libraryName, # Name of the document library
+  [Parameter(Mandatory = $true)]
+  [string[]]$fieldsToCheck, # Metadata fields we want to copy to the files
+  [Parameter()]
+  [int]$startId = -1, # Optional: Start point for file IDs, default value of -1
+  [Parameter()]
+  [int]$endId = -1 # Optional: End point for file IDs, default value of -1
 )
 
 # Connecting to SharePoint Online
@@ -33,7 +33,7 @@ Connect-PnPOnline -Url $siteUrl -Interactive -ClientId $clientId
 
 # Fetch files from the library based on the provided start and end IDs
 if (($startId -ne -1) -and ($endId -ne -1)) {
-    $queryGetPnpListItem = @"
+  $queryGetPnpListItem = @"
   <View Scope='RecursiveAll'>
     <Query>
         <Where>
@@ -51,25 +51,28 @@ if (($startId -ne -1) -and ($endId -ne -1)) {
     </Query>
   </View>
 "@
-    $files = Get-PnPListItem -List $libraryName -Query $queryGetPnpListItem -PageSize 1000
+  $files = Get-PnPListItem -List $libraryName -Query $queryGetPnpListItem -PageSize 1000
 }
 else {
-    # Fetch all files if no ID range is specified
-    $files = Get-PnPListItem -List $libraryName -PageSize 1000
+  # Fetch all files if no ID range is specified
+  $files = Get-PnPListItem -List $libraryName -PageSize 1000
 }
+
+$folderCache = @{}
 
 # Process each file and update metadata based on parent folder
 foreach ($fileItem in $files) {
-    $fileName = $fileItem["FileLeafRef"]
+  $fileName = $fileItem["FileLeafRef"]
 
-    #skip folders, we only want to update files
-    if ($fileItem.FileSystemObjectType -eq "Folder") {
-        continue
-    }
+  #skip folders, we only want to update files
+  if ($fileItem.FileSystemObjectType -eq "Folder") {
+    continue
+  }
 
-    $parentFolderUrl = $fileItem.FieldValues["FileDirRef"] # URL of the parent folder
+  $parentFolderUrl = $fileItem.FieldValues["FileDirRef"] # URL of the parent folder
 
-    # Query to get parent folder metadata
+  if (-not $folderCache.ContainsKey($parentFolderUrl)) {
+
     $query = @"
 <View Scope='RecursiveAll'>
   <Query>
@@ -90,40 +93,45 @@ foreach ($fileItem in $files) {
 "@
 
     try {
-        $folderItem = Get-PnPListItem -List $libraryName -Query $query
+      $folderItem = Get-PnPListItem -List $libraryName -Query $query
+      $folderCache[$parentFolderUrl] = $folderItem
     }
     catch {
-        Write-Host "Failed to retrieve folder item for $parentFolderUrl : $_"
-        continue
+      Write-Host "Failed to retrieve folder item for $parentFolderUrl : $_"
+      continue
     }
+  }
+  else {
+    $folderItem = $folderCache[$parentFolderUrl]
+  }
 
-    $folderMetadata = $folderItem.FieldValues
-    $fileMetadata = $fileItem.FieldValues
-    $metadataToUpdate = @{}
+  $folderMetadata = $folderItem.FieldValues
+  $fileMetadata = $fileItem.FieldValues
+  $metadataToUpdate = @{}
 
-    # Compare folder metadata with file metadata
-    foreach ($field in $fieldsToCheck) {
-        if ($folderMetadata.ContainsKey($field) -and $folderMetadata[$field] -ne $fileMetadata[$field]) {
-            # Handle managed metadata fields differently, TermGuid is needed to update metadata
-            if ($folderMetadata[$field] -is [Microsoft.SharePoint.Client.Taxonomy.TaxonomyFieldValue]) {
-                if ($folderMetadata[$field].Label -ne $fileMetadata[$field].Label) {
-                    $termGuid = $folderMetadata[$field].TermGuid
-                    $metadataToUpdate[$field] = $termGuid
-                }
-            }
-            else {
-                $metadataToUpdate[$field] = $folderMetadata[$field]
-            }
+  # Compare folder metadata with file metadata
+  foreach ($field in $fieldsToCheck) {
+    if ($folderMetadata.ContainsKey($field) -and $folderMetadata[$field] -ne $fileMetadata[$field]) {
+      # Handle managed metadata fields differently, TermGuid is needed to update metadata
+      if ($folderMetadata[$field] -is [Microsoft.SharePoint.Client.Taxonomy.TaxonomyFieldValue]) {
+        if ($folderMetadata[$field].Label -ne $fileMetadata[$field].Label) {
+          $termGuid = $folderMetadata[$field].TermGuid
+          $metadataToUpdate[$field] = $termGuid
         }
+      }
+      else {
+        $metadataToUpdate[$field] = $folderMetadata[$field]
+      }
     }
+  }
 
-    # Update file metadata if there are changes
-    if ($metadataToUpdate.Count -gt 0) {
-        try {
-            Set-PnPListItem -List $libraryName -Identity $fileItem.Id -Values $metadataToUpdate
-        }
-        catch {
-            Write-Host "Failed to update metadata for file: $fileName - $_"
-        }
+  # Update file metadata if there are changes
+  if ($metadataToUpdate.Count -gt 0) {
+    try {
+      Set-PnPListItem -List $libraryName -Identity $fileItem.Id -Values $metadataToUpdate
     }
+    catch {
+      Write-Host "Failed to update metadata for file: $fileName - $_"
+    }
+  }
 }
