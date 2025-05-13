@@ -82,4 +82,4 @@ $outputFilePath = "$output/$TermGroupName-$TermSetName.csv"
 $allTermObjects | Export-Csv -Path "$output/$TermGroupName-$TermSetName.csv" -NoTypeInformation -Encoding Unicode -Delimiter ";"
 
 # Print the full path to the console
-Write-Output -f green "The CSV file has been saved to: $outputFilePath"
+Write-Host -f green "The CSV file has been saved to: $outputFilePath"
