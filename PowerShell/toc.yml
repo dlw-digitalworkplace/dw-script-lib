@@ -1,9 +1,13 @@
+- name: Add-GraphPermissionsToManagedIdentity
+  href: Add-GraphPermissionsToManagedIdentity/Add-GraphPermissionsToManagedIdentity.md
 - name: Add-TermGroupSPAdmin
   href: Add-TermGroupSPAdmin/Add-TermGroupSPAdmin.md
 - name: Assign-FieldCustomizerExtension
   href: Assign-FieldCustomizerExtension/Assign-FieldCustomizerExtension.md
 - name: Copy-FolderToDifferentSiteDifferentTenant
   href: Copy-FolderToDifferentSiteDifferentTenant/Copy-FolderToDifferentSiteDifferentTenant.md
+- name: Export-TermSet
+  href: Export-TermSet/Export-TermSet.md
 - name: Explore-MicrosoftGraphModule
   href: Explore-MicrosoftGraphModule/Explore-MicrosoftGraphModule.md
 - name: Import-KeyVaultFromExcel
@@ -16,8 +20,6 @@
   href: Restore-DeletedTermSet/Restore-DeletedTermSet.md
 - name: Set-TeamsPolicyToAadGroup
   href: Set-TeamsPolicyToAadGroup/Set-TeamsPolicyToAadGroup.md
-- name: Add-GraphPermissionsToManagedIdentity
-  href: Add-GraphPermissionsToManagedIdentity/Add-GraphPermissionsToManagedIdentity.md
 - name: Set-DirectoryClassificationSetting
   href: Set-DirectoryClassificationSetting/Set-DirectoryClassificationSetting.md
 - name: Set-DefaultValuesFolder
