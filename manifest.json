@@ -95,6 +95,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "../PowerShell/Export-TermSet/Export-TermSet.md",
+      "output": {
+        ".html": {
+          "relative_path": "PowerShell/Export-TermSet/Export-TermSet.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "../PowerShell/Import-KeyVaultFromExcel/Import-KeyVaultFromExcel.md",
       "output": {
         ".html": {
