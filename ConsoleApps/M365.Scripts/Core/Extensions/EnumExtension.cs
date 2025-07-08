@@ -12,9 +12,9 @@ namespace Core.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="menuTitle"></param>
         /// <returns></returns>
-        public static T PrintMenu<T>(string menuTitle) where T : Enum
+        public static TEnum PrintMenu<TEnum>(string menuTitle) where TEnum : Enum
         {
-            var enumValues = (T[])Enum.GetValues(typeof(T));
+            var enumValues = (TEnum[])Enum.GetValues(typeof(TEnum));
             int selectedIndex = 0;
             ConsoleKey key;
 
@@ -86,8 +86,6 @@ namespace Core.Extensions
 
             return enumValues[selectedIndex];
         }
-
-
 
         private static string GetEnumDisplayName<T>(T enumValue) where T : Enum
         {

@@ -6,5 +6,9 @@ namespace Core.Enums
     {
         [Display(Name = "Quick execution")]
         QuickExecution,
+        [Display(Name = "Intelligent versioning")]
+        IntelligentVersioning,
+        [Display(Name = "Clean up/remove file versions")]
+        VersionCleanUp
     }
 }

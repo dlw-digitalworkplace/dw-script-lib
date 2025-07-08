@@ -22,20 +22,27 @@ namespace ConsoleApp.Tasks
         /// </summary>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public Task StartAsync(CancellationToken cancellationToken)
+        public async Task StartAsync(CancellationToken cancellationToken)
         {
-            var option = EnumExtension.PrintMenu<ScriptTask>("Select a script to execute.");
-            return Task.Run(async () =>
+            while (!cancellationToken.IsCancellationRequested)
             {
+                var option = EnumExtension.PrintMenu<ScriptTask>("Select a script to execute.");
+
                 try
                 {
-                    await _serviceProvider.GetRequiredKeyedService<IScriptTask>(option).RunAsync();
+                    var scriptTask = _serviceProvider.GetRequiredKeyedService<IScriptTask>(option);
+                    await scriptTask.RunAsync();
+
+                    Console.WriteLine("Task finished. Press any key to go back to the menu.");
+                    Console.ReadKey(true);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    Console.Error.WriteLine(ex.Message);
+                    Console.Error.WriteLine($"Error: {ex.Message}");
                 }
-            });
+            }
+
+            Console.WriteLine("Cancellation requested. Exiting menu.");
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

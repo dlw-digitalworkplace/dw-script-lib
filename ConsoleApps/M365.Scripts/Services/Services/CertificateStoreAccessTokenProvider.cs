@@ -24,7 +24,7 @@ namespace Services.Services
         public async Task<AccessToken> GetTokenAsync(string resource)
         {
             var cacheKey = $"{CachePrefix}_{resource}";
-            var certificateThumbprint = _configuration[Globals.Application.ClientCertificateThumbprint];
+            var certificateThumbprint = _configuration[Globals.Client.CertificateThumbprint];
 
             if (string.IsNullOrWhiteSpace(certificateThumbprint))
             {
@@ -47,8 +47,8 @@ namespace Services.Services
                 var certificate = certificates.OfType<X509Certificate2>().FirstOrDefault();
 
                 var credentialProvider = new ClientCertificateCredential(
-                    _configuration[Globals.Tenant.TenantId],
-                    _configuration[Globals.Application.ClientId],
+                    _configuration[Globals.Tenant.Id],
+                    _configuration[Globals.Client.Id],
                     certificate
                 );
 

@@ -25,7 +25,7 @@ public class Program
 
         }).ConfigureServices((context, services) =>
         {
-            services.RegisterServices();
+            services.RegisterServices(context.Configuration);
             services.RegisterKeyedServices();
 
             services.AddSingleton(context.Configuration);

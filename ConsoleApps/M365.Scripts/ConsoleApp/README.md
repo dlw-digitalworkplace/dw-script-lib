@@ -1,0 +1,12 @@
+TODO:
+	- How to start with adding a new script
+		- Configure keyed services
+		- Setup script with interface and enum
+		- Appsettings and structure
+	- Documentation for each function
+		- What it does
+		- Permissions needed
+		- Other things needed
+	- Folder for scripts to help with setup
+		- Creating app regs
+		- Generating certificate
