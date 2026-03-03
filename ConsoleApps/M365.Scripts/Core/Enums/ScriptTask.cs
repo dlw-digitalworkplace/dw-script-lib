@@ -9,6 +9,8 @@ namespace Core.Enums
         [Display(Name = "Intelligent versioning")]
         IntelligentVersioning,
         [Display(Name = "Clean up/remove file versions")]
-        VersionCleanUp
+        VersionCleanUp,
+        [Display(Name = "Send queue message")]
+        SendQueueMessage,
     }
 }

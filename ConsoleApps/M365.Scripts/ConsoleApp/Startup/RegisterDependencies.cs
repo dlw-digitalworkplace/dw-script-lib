@@ -22,6 +22,7 @@ namespace ConsoleApp.Startup
             services.AddSingleton<ISharePointContextProvider, SharePointContextProvider>();
             services.AddSingleton<IAccessTokenProvider, CertificateStoreAccessTokenProvider>();
             services.AddSingleton<IConfigurationService, ConfigurationService>();
+            services.AddSingleton<IQueueService, QueueService>();
             services.AddSingleton<IBlobService, BlobService>();
             services.AddSingleton(new BlobServiceClient(GetConnectionString(configuration[Globals.AzureBlob.ConnectionString])));
         }
@@ -32,6 +33,7 @@ namespace ConsoleApp.Startup
             services.AddKeyedSingleton<IScriptTask, QuickExecutionTask>(ScriptTask.QuickExecution);
             services.AddKeyedSingleton<IScriptTask, IntelligentVersioningTask>(ScriptTask.IntelligentVersioning);
             services.AddKeyedSingleton<IScriptTask, VersionCleanUpTask>(ScriptTask.VersionCleanUp);
+            services.AddKeyedSingleton<IScriptTask, SendQueueMessageTask>(ScriptTask.SendQueueMessage);
         }
 
         public static string GetConnectionString(string? connectionString)
