@@ -6,6 +6,8 @@
   href: Assign-FieldCustomizerExtension/Assign-FieldCustomizerExtension.md
 - name: Copy-FolderToDifferentSiteDifferentTenant
   href: Copy-FolderToDifferentSiteDifferentTenant/Copy-FolderToDifferentSiteDifferentTenant.md
+- name: Enumerate-Subsites
+  href: Enumerate-Subsites/Enumerate-Subsites.md
 - name: Export-TermSet
   href: Export-TermSet/Export-TermSet.md
 - name: Explore-MicrosoftGraphModule

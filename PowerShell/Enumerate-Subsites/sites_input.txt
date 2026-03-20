@@ -1,0 +1,2 @@
+# Add your root SharePoint site URLs below, one per line.
+# Lines starting with # are ignored.
